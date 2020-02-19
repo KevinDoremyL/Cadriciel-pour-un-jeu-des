@@ -1,3 +1,3 @@
-# Cadriciel-pour-un-jeu-des
+# Jeu de Dés
 Cadriciel pour un jeu de dés
 
