@@ -20,7 +20,7 @@ public class DeTest {
 		assertTrue(de1.compareTo(de2) == 1);
 	}
 
-	@Test
+	@Test //test
 	public void deInferieurTest() {
 		de1.setFaceObtenue(4);
 		de2.setFaceObtenue(5);
