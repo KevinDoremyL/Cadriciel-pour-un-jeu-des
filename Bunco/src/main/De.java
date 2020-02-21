@@ -1,4 +1,4 @@
-public class De {
+public class De implements Comparable {
     int face;
 
     public De() {
@@ -15,5 +15,11 @@ public class De {
 
     public int compareTo(De de) {
         return 1;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        // TODO Auto-generated method stub
+        return 0;
     }
 }

@@ -48,7 +48,7 @@ public class FlightTest {
     } else if (testConstructors[0].getModifiers() != Modifier.PUBLIC) {
       res = "Wrong modifier";
     } else {
-      Class<?>[] constParams = testConstructors[0].getParameterTypes();
+      final Class<?>[] constParams = testConstructors[0].getParameterTypes();
       if (constExpectedParams.length != constParams.length) {
         res = "Invalid number of parameters";
       } else {
@@ -66,7 +66,7 @@ public class FlightTest {
   }
 
   private static void assertConstructor() {
-    String res = checkConstructor();
+    final String res = checkConstructor();
     if (res != "") {
       fail(res);
     }
@@ -85,10 +85,10 @@ public class FlightTest {
         status);
   }
 
-  private static Field getAccessibleField(String fieldName) {
+  private static Field getAccessibleField(final String fieldName) {
     Field field = null;
 
-    for (Field curField : testFields) {
+    for (final Field curField : testFields) {
       if (curField.getName().equals(fieldName)) {
         field = curField;
         field.setAccessible(true);
@@ -98,9 +98,9 @@ public class FlightTest {
     return field;
   }
 
-  private static Field assertField(String fieldName, Class<?> type, int modifier) {
+  private static Field assertField(final String fieldName, final Class<?> type, final int modifier) {
     boolean foundField = false;
-    Field resField = getAccessibleField(fieldName);
+    final Field resField = getAccessibleField(fieldName);
     if (resField != null) {
       // Test that it is the right type
       assertEquals(type, resField.getType());
@@ -116,9 +116,10 @@ public class FlightTest {
     return resField;
   }
 
-  private static void assertMethod(String methodName, Class<?> returnType, int modifier, int paramCount) {
+  private static void assertMethod(final String methodName, final Class<?> returnType, final int modifier,
+      final int paramCount) {
     boolean foundMethod = false;
-    for (Method curMethod : testMethods) {
+    for (final Method curMethod : testMethods) {
       // Check the signature
       if (curMethod.getName().equals(methodName) && curMethod.getParameterTypes().length == paramCount) {
         // Test that it is the right return type
@@ -136,9 +137,9 @@ public class FlightTest {
     assertTrue("Method '" + methodName + "' was not found", foundMethod);
   }
 
-  private static void assertToString(String company, int flightNumber, String destination, int departureTime,
-      String gate, String status, String expected) {
-    Flight test = new Flight(company, flightNumber, destination, departureTime, gate, status);
+  private static void assertToString(final String company, final int flightNumber, final String destination,
+      final int departureTime, final String gate, final String status, final String expected) {
+    final Flight test = new Flight(company, flightNumber, destination, departureTime, gate, status);
     assertEquals(expected, test.toString());
   }
 
@@ -157,7 +158,7 @@ public class FlightTest {
 
   @Test
   public void testConstructor2() {
-    Flight testFlight = new Flight("AF", 873, "New-York", 0025, "C-2", Flight.DELAYED);
+    final Flight testFlight = new Flight("AF", 873, "New-York", 0025, "C-2", Flight.DELAYED);
 
     // Check values
     assertEquals("AF", testFlight.getCompany());
@@ -171,14 +172,14 @@ public class FlightTest {
   @Test
   public void testCompany() throws IllegalAccessException {
     // Check that field exists
-    Field testField = assertField("company", String.class, Modifier.PRIVATE);
-    String previousValue = (String) testField.get(testInstance);
+    final Field testField = assertField("company", String.class, Modifier.PRIVATE);
+    final String previousValue = (String) testField.get(testInstance);
 
     // Check that getter exists
     assertMethod("getCompany", String.class, Modifier.PUBLIC, 0);
 
     // Change field value
-    String testValue = "EZY";
+    final String testValue = "EZY";
     testField.set(testInstance, testValue);
 
     // Test getter
@@ -191,14 +192,14 @@ public class FlightTest {
   @Test
   public void testFlightNumber() throws IllegalAccessException {
     // Check that field exists
-    Field testField = assertField("flightNumber", int.class, Modifier.PRIVATE);
-    int previousValue = (int) testField.get(testInstance);
+    final Field testField = assertField("flightNumber", int.class, Modifier.PRIVATE);
+    final int previousValue = (int) testField.get(testInstance);
 
     // Check that getter exists
     assertMethod("getFlightNumber", int.class, Modifier.PUBLIC, 0);
 
     // Change field value
-    int testValue = 3210;
+    final int testValue = 3210;
     testField.set(testInstance, testValue);
 
     // Test getter
@@ -211,14 +212,14 @@ public class FlightTest {
   @Test
   public void testDestination() throws IllegalAccessException {
     // Check that field exists
-    Field testField = assertField("destination", String.class, Modifier.PRIVATE);
-    String previousValue = (String) testField.get(testInstance);
+    final Field testField = assertField("destination", String.class, Modifier.PRIVATE);
+    final String previousValue = (String) testField.get(testInstance);
 
     // Check that getter exists
     assertMethod("getDestination", String.class, Modifier.PUBLIC, 0);
 
     // Change field value
-    String testValue = "Casablanca";
+    final String testValue = "Casablanca";
     testField.set(testInstance, testValue);
 
     // Test getter
@@ -231,14 +232,14 @@ public class FlightTest {
   @Test
   public void testDepartureTime() throws IllegalAccessException {
     // Check that field exists
-    Field testField = assertField("departureTime", int.class, Modifier.PRIVATE);
-    int previousValue = (int) testField.get(testInstance);
+    final Field testField = assertField("departureTime", int.class, Modifier.PRIVATE);
+    final int previousValue = (int) testField.get(testInstance);
 
     // Check that getter exists
     assertMethod("getDepartureTime", int.class, Modifier.PUBLIC, 0);
 
     // Change field value
-    int testValue = 1630;
+    final int testValue = 1630;
     testField.set(testInstance, testValue);
 
     // Test getter
@@ -251,14 +252,14 @@ public class FlightTest {
   @Test
   public void testGate() throws IllegalAccessException {
     // Check that field exists
-    Field testField = assertField("gate", String.class, Modifier.PRIVATE);
-    String previousValue = (String) testField.get(testInstance);
+    final Field testField = assertField("gate", String.class, Modifier.PRIVATE);
+    final String previousValue = (String) testField.get(testInstance);
 
     // Check that getter exists
     assertMethod("getGate", String.class, Modifier.PUBLIC, 0);
 
     // Change field value
-    String testValue = "A-2";
+    final String testValue = "A-2";
     testField.set(testInstance, testValue);
 
     // Test getter
@@ -271,14 +272,14 @@ public class FlightTest {
   @Test
   public void testStatus() throws IllegalAccessException {
     // Check that field exists
-    Field testField = assertField("status", String.class, Modifier.PRIVATE);
-    String previousValue = (String) testField.get(testInstance);
+    final Field testField = assertField("status", String.class, Modifier.PRIVATE);
+    final String previousValue = (String) testField.get(testInstance);
 
     // Check that getter exists
     assertMethod("getStatus", String.class, Modifier.PUBLIC, 0);
 
     // Change field value
-    String testValue = Flight.BOARDING;
+    final String testValue = Flight.BOARDING;
     testField.set(testInstance, testValue);
 
     // Test getter
