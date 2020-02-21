@@ -20,14 +20,14 @@ public class DeTest {
 		assertTrue(de1.compareTo(de2) == 1);
 	}
 
-	@Test //test
+	@Test //test 
 	public void deInferieurTest() {
 		de1.setFaceObtenue(4);
 		de2.setFaceObtenue(5);
 		assertTrue(de2.compareTo(de1) == -1);
 	}
 
-	@Test
+	@Test // Ceci est un deuxieme test
 	public void memeDeTest() {
 		de1.setFaceObtenue(4);
 		assertTrue(de1.compareTo(de1) == 0);
