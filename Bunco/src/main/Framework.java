@@ -9,7 +9,7 @@ public abstract class Framework {
 
         debutPartie();
         jouerTour();//test
-        finPartie();
+        finPartie();// test ryad
 
     }
 
