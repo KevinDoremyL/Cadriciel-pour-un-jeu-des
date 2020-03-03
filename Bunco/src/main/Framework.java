@@ -8,7 +8,7 @@ public abstract class Framework {
     final void gameStart() {
 
         debutPartie();
-        jouerTour();
+        jouerTour();//test
         finPartie();
 
     }
