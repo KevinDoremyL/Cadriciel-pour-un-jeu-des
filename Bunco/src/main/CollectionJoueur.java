@@ -1,7 +1,7 @@
 public class CollectionJoueur implements ICollection<Joueur> {
 
     public CollectionJoueur() {
-
+        //nassima
     }
 
     public void ajouterJoueur(Joueur joueurAjouter) {
