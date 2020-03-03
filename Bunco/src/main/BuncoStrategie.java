@@ -1,6 +1,8 @@
 package main;
 
-public class BuncoStrategie implements IStrategie {
+import sun.util.resources.Bundles.Strategy;
+
+public class BuncoStrategie implements Strategy {
     @Override
     public void calculerLeVainqueur(Jeu jeu){
 

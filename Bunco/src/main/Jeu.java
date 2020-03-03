@@ -2,12 +2,12 @@
 
 public class Jeu extends Framework {
 
-    Strategy strategy;
+    private Strategy strategy;
     
-    public Jeu(IStrategie strategie,int nbTours) {
+    public Jeu(Strategy strategie,int nbTours) {
     }
 
-    public void setStrategy(Stragegy param) {
+    public void setStrategy(Strategy param) {
         this.strategy = param;
     }
 
