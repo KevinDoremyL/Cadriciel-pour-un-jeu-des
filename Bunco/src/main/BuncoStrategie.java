@@ -1,6 +1,3 @@
-package main;
-
-import sun.util.resources.Bundles.Strategy;
 
 public class BuncoStrategie implements Strategy {
     @Override

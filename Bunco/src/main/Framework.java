@@ -1,4 +1,4 @@
-package main;
+import java.util.ArrayList;
 
 public abstract class Framework {
 
@@ -24,8 +24,9 @@ public abstract class Framework {
 
     }
 
-    abstract void calculerLeVainceur(Jeu jeu);
+    abstract void calculerLeVainceur();
 
-    abstract void calculerScoreTour(Jeu jeu);
+    abstract void calculerScoreTour();
+
 
 }

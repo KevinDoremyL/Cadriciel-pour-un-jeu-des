@@ -11,24 +11,21 @@ public class Jeu extends Framework {
         this.strategy = param;
     }
 
-    public void executeScore() {
-
-    }
-
-    public void executeVainceur() {
-
-    }
-
-    @Override
-    public void calculerLeVainqueur(Jeu jeu) {
-        strategy.calculerLeVainqueur(jeu);
-
-    }
-
-    @Override
-    public void calculerScoreTour(Jeu jeu) {
+    public void executeScore(Jeu jeu) {
         strategy.calculerScoreTour(jeu);
+    }
+
+    public void executeVainceur(Jeu jeu) {
+        strategy.calculerLeVainqueur(jeu);
+    }
+
+    @Override
+    void calculerLeVainceur() {
 
     }
 
+    @Override
+    void calculerScoreTour() {
+
+    }
 }
