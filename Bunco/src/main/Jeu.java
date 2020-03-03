@@ -1,18 +1,33 @@
-public class Jeu implements IStrategie {
-    private IStrategie strategie;
+//Classe context
+
+public class Jeu extends Framework {
+
+    Strategy strategy;
     
     public Jeu(IStrategie strategie,int nbTours) {
     }
 
+    public void setStrategy(Stragegy param) {
+        this.strategy = param;
+    }
+
+    public void executeScore() {
+
+    }
+
+    public void executeVainceur() {
+
+    }
+
     @Override
     public void calculerLeVainqueur(Jeu jeu) {
-        // TODO Auto-generated method stub
+        strategy.calculerLeVainqueur(jeu);
 
     }
 
     @Override
     public void calculerScoreTour(Jeu jeu) {
-        // TODO Auto-generated method stub
+        strategy.calculerScoreTour(jeu);
 
     }
 
