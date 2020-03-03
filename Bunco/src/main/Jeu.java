@@ -1,6 +1,7 @@
 public class Jeu implements IStrategie {
-
-    public Jeu(int nbTours) {
+    private IStrategie strategie;
+    
+    public Jeu(IStrategie strategie,int nbTours) {
     }
 
     @Override
