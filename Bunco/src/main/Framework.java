@@ -10,7 +10,7 @@ public abstract class Framework {
         debutPartie();
         jouerTour();//test
         finPartie();// test ryad
-
+        // test
     }
 
     public void debutPartie() {}
