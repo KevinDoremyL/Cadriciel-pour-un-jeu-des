@@ -22,4 +22,5 @@
 hs_err_pid*
 Bunco/src/app/App.java
 .idea
+.vscode
 .gitignore
