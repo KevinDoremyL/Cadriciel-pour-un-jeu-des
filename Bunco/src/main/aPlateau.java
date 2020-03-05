@@ -4,7 +4,7 @@ public class aPlateau {
         // TODO Vue de l'app ( M V C )
         System.out.println("Le plateau de jeu!");
         System.out.println("Kevin Commmit with terminal ");
-        System.out.println("Ryad commit du chef test 2 3 4 5");
+        System.out.println("Ryad commit du chef test 2 3 4 5 6");
         System.out.println("Nassim test commit");
     }
 }
