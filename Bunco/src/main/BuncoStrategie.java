@@ -6,6 +6,6 @@ public class BuncoStrategie implements Strategy {
     }
     @Override
     public void calculerScoreTour(Jeu jeu){
-
+    //test nass
     }
 }
