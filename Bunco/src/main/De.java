@@ -1,3 +1,5 @@
+package src.main;
+
 public class De implements Comparable<De> {
     int face;
 

@@ -1,3 +1,5 @@
+package src.main;
+
 public class IterateurJoueur implements Iterateur<Joueur> {
 
     @Override

@@ -1,3 +1,5 @@
+package src.test;
+
 public class JoueurTest {
 
     // TODO Test Unitaire 2 : Dans le cas d'obtention de 0 point si le joueur passe
