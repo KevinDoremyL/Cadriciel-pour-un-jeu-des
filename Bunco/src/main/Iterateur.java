@@ -1,3 +1,5 @@
+package src.main;
+
 public interface Iterateur<E> {
     void reset(); // reset to the first element
 

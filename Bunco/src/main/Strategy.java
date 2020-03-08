@@ -1,3 +1,5 @@
+package src.main;
+
 public interface Strategy {
 
     public void calculerLeVainqueur(Jeu jeu);
