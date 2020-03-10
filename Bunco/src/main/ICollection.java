@@ -1,3 +1,3 @@
 public interface ICollection<E> {
-    Iterateur<E> iterateur();
+    public Iterateur getIterateur();
 }
