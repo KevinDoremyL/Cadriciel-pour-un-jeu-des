@@ -1,5 +1,3 @@
-package src.main;//Classe context
-
 public class Jeu extends Framework {
 
     private Strategy strategy;

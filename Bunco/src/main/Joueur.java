@@ -1,5 +1,3 @@
-package src.main;
-
 public class Joueur implements Comparable<Joueur> {
     public Joueur() {
 

@@ -1,5 +1,3 @@
-package src.test;
-
 public class JeuTest {
 
     // TODO Test Unitaire 1 : Le classement final des joueurs avec différents

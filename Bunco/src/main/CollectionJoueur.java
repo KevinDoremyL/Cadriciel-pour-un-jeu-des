@@ -1,5 +1,3 @@
-package src.main;
-
 public class CollectionJoueur implements ICollection<Joueur> {
 
     public CollectionJoueur() {

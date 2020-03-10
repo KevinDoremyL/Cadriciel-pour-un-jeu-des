@@ -1,5 +1,3 @@
-package src.main;
-
 public class BuncoStrategie implements Strategy {
     @Override
     public void calculerLeVainqueur(Jeu jeu){
