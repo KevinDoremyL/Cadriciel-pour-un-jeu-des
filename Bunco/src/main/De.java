@@ -8,6 +8,10 @@ public class De implements Comparable<De> {
     public void setFaceObtenue(int faceObtenue) {
         this.nbFaces = faceObtenue;
     }
+
+    public int getNbFaces() {
+        return nbFaces;
+    }
     public int roll()
     {
         this.nbFaces = (int)(Math.random() * nbFaces) + 1;

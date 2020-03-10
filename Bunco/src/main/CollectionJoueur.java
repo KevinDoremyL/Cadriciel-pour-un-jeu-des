@@ -10,7 +10,7 @@ public class CollectionJoueur implements ICollection<Joueur> {
 
 
     @Override
-    public Iterateur<Jouegit ur> getIterateur() {
+    public Iterateur<Joueur> getIterateur() {
         return new IterateurJoueur();
     }
 
