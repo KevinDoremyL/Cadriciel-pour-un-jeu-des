@@ -2,7 +2,7 @@ public class Jeu extends Framework {
 
     private Strategy strategy;
     
-    public Jeu(Strategy strategie,int nbTours) {
+    public Jeu(Strategy strategie, int nbTours) {
     }
 
     public void setStrategy(Strategy param) {
