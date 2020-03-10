@@ -1,20 +1,23 @@
 package src.main;
 
 public class De implements Comparable<De> {
-    int face;
+    int nbFaces;
 
     public De() {
 
     }
 
-    public De(int face) {
-        this.face = face;
+    public De(int nbFaces) {
+        this.nbFaces = nbFaces;
     }
 
-    public void setFaceObtenue(int face) {
-        this.face = face;
+    public void setFaceObtenue(int nbFaces) {
+        this.nbFaces = nbFaces;
     }
 
+    public int getFaceObtenue() {
+        return nbFaces;
+    }
     @Override
     public int compareTo(De o) {
         // TODO Auto-generated method stub
