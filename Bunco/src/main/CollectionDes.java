@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 
 public class CollectionDes implements ICollection<De> {
-    private int nbDes;
+
     private De[] tableauDe;
 
     public CollectionDes(int nbDes) {
 
         tableauDe = new De[nbDes];
     }
-
 
     @Override
     public Iterateur getIterateur() {
@@ -28,14 +27,14 @@ public class CollectionDes implements ICollection<De> {
         public De next() {
 
             if(this.hasNext()){
-                return tableauDe.get(index++);
+                return tableauDe[index++];
             }
             return null;
         }
 
         @Override
         public De currentItem() {
-            return listeDe.get(index);
+            return tableauDe[index];
         }
 
         @Override
@@ -48,5 +47,4 @@ public class CollectionDes implements ICollection<De> {
         }
 
     }
-
 }
