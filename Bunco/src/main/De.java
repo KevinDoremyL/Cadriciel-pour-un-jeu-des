@@ -25,4 +25,5 @@ public class De implements Comparable<De> {
         String result = Integer.toString(this.nbFaces);
         return result;
     }
+
 }

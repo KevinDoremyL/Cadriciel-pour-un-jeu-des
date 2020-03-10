@@ -2,11 +2,11 @@ public class aPlateau {
     //
     public static void main(String[] args) {
         // TODO Vue de l'app ( M V C )
-        System.out.println("Le plateau de jeu!");
 
-        System.out.println("Kevin First Commmit 1");
-        System.out.println("Ryad commit du chef test 2 3 4 5");
+        De de1 = new De(6);
+        De de2 = new De(6);
+        System.out.println(de1.roll());
+        System.out.println(de2.roll());
 
-        System.out.println("Nassim test commit");
     }
 }
