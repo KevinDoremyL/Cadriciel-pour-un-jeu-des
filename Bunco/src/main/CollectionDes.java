@@ -7,12 +7,18 @@ public class CollectionDes implements ICollection<De> {
     this.listeDe = listeDe;
     }
 
-
     @Override
     public Iterateur getIterateur() {
-        return new IterateurDe() {
-        };
+        return new IterateurDe();
     }
+
+    public void ajouterDe(De de){
+        this.listeDe.add(de);
+    }
+    public void retirerDe(De de){
+        this.listeDe.remove(de);
+    }
+
 
     class IterateurDe implements Iterateur<De> {
         private int index=0;
@@ -44,7 +50,12 @@ public class CollectionDes implements ICollection<De> {
         }
             return false;
         }
-
+        public boolean isEmpty(){
+            if(listeDe.size() == 0){
+                return  true;
+            }
+            return false;
+        }
     }
 
 }

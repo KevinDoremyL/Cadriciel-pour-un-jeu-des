@@ -1,6 +1,9 @@
 public class Joueur implements Comparable<Joueur> {
-    public Joueur() {
-
+    private String nom;
+    private int score;
+    public Joueur(String nom) {
+    this.nom = nom;
+    this.score = 0;
     }
 
     @Override

@@ -1,7 +1,7 @@
 //Classe context
 
 public class Jeu extends Framework {
-
+    private int nbTours;
     private Strategy strategy;
     
     public Jeu(Strategy strategie,int nbTours) {
