@@ -1,5 +1,3 @@
-package src.main;
-
 public class IterateurDe implements Iterateur<De> {
     private int index;
     @Override

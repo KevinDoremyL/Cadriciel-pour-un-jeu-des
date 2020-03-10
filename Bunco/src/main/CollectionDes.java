@@ -1,5 +1,3 @@
-package src.main;
-
 public class CollectionDes implements ICollection<De> {
 
     public CollectionDes() {

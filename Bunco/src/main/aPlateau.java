@@ -1,5 +1,3 @@
-package src.main;
-
 public class aPlateau {
     //
     public static void main(String[] args) {
