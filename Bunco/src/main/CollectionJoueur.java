@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class CollectionJoueur implements ICollection<Joueur> {
 
-    private Joueur[] tableauJoueur;
+    private ArrayList<Joueur> listeJoueurs;
 
     public CollectionJoueur(int nbJoueurs) {
-        tableauJoueur = new Joueur[nbJoueurs];
+        listeJoueurs = new ArrayList<Joueur>(nbJoueurs);
     }
 
 
@@ -26,20 +26,20 @@ public class CollectionJoueur implements ICollection<Joueur> {
         public Joueur next() {
 
             if(this.hasNext()){
-                return tableauJoueur[index++];
+                return listeJoueurs.get(index++);
             }
             return null;
         }
 
         @Override
         public Joueur currentItem() {
-            return tableauJoueur[index];
+            return listeJoueurs.get(index);
         }
 
         @Override
         public boolean hasNext() {
 
-            if(index < tableauJoueur.length) {
+            if(index < listeJoueurs.size()) {
                 return true;
             }
             return false;
