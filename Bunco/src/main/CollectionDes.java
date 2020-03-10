@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 
 public class CollectionDes implements ICollection<De> {
-    private ArrayList<De> listeDe;
-    public CollectionDes(ArrayList<De> listeDe) {
-        this.listeDe = listeDe;
+    private int nbDes;
+    private De[] tableauDe;
+
+    public CollectionDes(int nbDes) {
+
+        tableauDe = new De[nbDes];
     }
 
 
@@ -25,7 +28,7 @@ public class CollectionDes implements ICollection<De> {
         public De next() {
 
             if(this.hasNext()){
-                return listeDe.get(index++);
+                return tableauDe.get(index++);
             }
             return null;
         }
@@ -38,7 +41,7 @@ public class CollectionDes implements ICollection<De> {
         @Override
         public boolean hasNext() {
 
-            if(index < listeDe.size()){
+            if(index < tableauDe.length){
                 return true;
             }
             return false;
