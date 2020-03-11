@@ -11,6 +11,14 @@ public class Joueur implements Comparable<Joueur> {
         return 0;
     }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     public int getScore() {
         return score;
     }

@@ -9,15 +9,16 @@ public class BuncoStrategie implements Strategy {
         this.collectionDes.setFaceDesDes(6);
 
     }
+
+    /**
+     *
+     */
     public void jouerUnTour(){
-
-
       Iterateur<De> iterateur =  collectionDes.getIterateur();
       iterateur.currentItem().roll();
         while (iterateur.hasNext()) {
             iterateur.next().roll();
         }
-
 
     }
     @Override
