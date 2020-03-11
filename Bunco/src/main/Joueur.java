@@ -1,4 +1,6 @@
 public class Joueur implements Comparable<Joueur> {
+    String nom;
+    int score;
     public Joueur() {
 
     }
@@ -7,5 +9,9 @@ public class Joueur implements Comparable<Joueur> {
     public int compareTo(Joueur o) {
         // TODO Auto-generated method stub
         return 0;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

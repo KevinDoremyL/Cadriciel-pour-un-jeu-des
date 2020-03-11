@@ -1,10 +1,11 @@
-//Classe context
-
 public class Jeu extends Framework {
 
+    private CollectionJoueur collectionJoueur;
     private Strategy strategy;
     
-    public Jeu(Strategy strategie,int nbTours) {
+    public Jeu(Strategy strategie,int nbJoueur) {
+        this.strategy = strategie;
+        this.collectionJoueur = new CollectionJoueur(nbJoueur);
     }
 
     public void setStrategy(Strategy param) {
@@ -17,6 +18,16 @@ public class Jeu extends Framework {
 
     public void executeVainceur(Jeu jeu) {
         strategy.calculerLeVainqueur(jeu);
+    }
+
+
+
+    public void setCollectionJoueur(CollectionJoueur collectionJoueur) {
+        this.collectionJoueur = collectionJoueur;
+    }
+
+    public CollectionJoueur getCollectionJoueur() {
+        return collectionJoueur;
     }
 
     @Override

@@ -1,21 +1,29 @@
 public class De implements Comparable<De> {
-    int face;
+    private int nbFaces;
 
-    public De() {
-
+    public De(int nbFaces) {
+        this.nbFaces = nbFaces;
     }
 
-    public De(int face) {
-        this.face = face;
+    public void setFaceObtenue(int faceObtenue) {
+        this.nbFaces = faceObtenue;
     }
+    public void roll()
+    {
+        this.nbFaces = (int)(Math.random() * nbFaces) + 1;
 
-    public void setFaceObtenue(int face) {
-        this.face = face;
+
     }
-
     @Override
     public int compareTo(De o) {
         // TODO Auto-generated method stub
         return 0;
     }
+    @Override
+    public String toString()
+    {
+        String result = Integer.toString(this.nbFaces);
+        return result;
+    }
+
 }

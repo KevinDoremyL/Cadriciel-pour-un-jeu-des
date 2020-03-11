@@ -1,4 +1,5 @@
-public class IterateurJoueur implements Iterateur<Joueur> {
+
+public class IterateurJoueur implements Iterateur {
 
     @Override
     public void reset() {

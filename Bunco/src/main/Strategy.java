@@ -2,7 +2,7 @@ public interface Strategy {
 
     public void calculerLeVainqueur(Jeu jeu);
 
-    public void calculerScoreTour(Jeu jeu);
+    public int calculerScoreTour(Jeu jeu);
 
 }
 
