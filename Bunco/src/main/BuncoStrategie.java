@@ -10,9 +10,7 @@ public class BuncoStrategie implements Strategy {
 
     }
 
-    /**
-     *
-     */
+
     public void jouerUnTour(){
       Iterateur<De> iterateur =  collectionDes.getIterateur();
       iterateur.currentItem().roll();
@@ -26,20 +24,24 @@ public class BuncoStrategie implements Strategy {
 
     }
     @Override
-    public int calculerScoreTour(Jeu jeu) {
+    public void calculerScoreTour(Jeu jeu) {
 
     Iterateur<Joueur> iterateurJoueur = jeu.getCollectionJoueur().getIterateur();
     jouerUnTour();
+    int identiqueAuTour =0;
 
-    while(nbTour <= 6 && iterateurJoueur.currentItem().getScore() < 21 &&
-            iterateurJoueur.currentItem().getScore()!=0){
-        jouerUnTour();
-        nbTour++;
+
+    while(this.nbTour <= 6 && iterateurJoueur.currentItem().getScore() < 21 &&
+            iterateurJoueur.currentItem().getScore()!=0
+            && iterateurJoueur.hasNext()){
+
+            jouerUnTour();
+
+
+
+        this.nbTour++;
     }
     iterateurJoueur.next();
-
-
-    return 0;
 
 
 
