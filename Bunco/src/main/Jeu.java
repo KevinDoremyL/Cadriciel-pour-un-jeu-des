@@ -1,8 +1,16 @@
 public class Jeu extends Framework {
 
     private Strategy strategy;
+    private int nbTours;
+    private CollectionDes listeDes;
+    private CollectionJoueur listeJoueurs;
 
-    public Jeu(Strategy strategie, int nbTours) {
+    public Jeu(Strategy strategie, int nbJoueurs) {
+
+        this.nbTours = nbTours;
+
+        listeJoueurs = new CollectionJoueur(nbJoueurs);
+
     }
 
     public void setStrategy(Strategy param) {
@@ -15,6 +23,10 @@ public class Jeu extends Framework {
 
     public void executeVainceur(Jeu jeu) {
         strategy.calculerLeVainqueur(jeu);
+    }
+
+    public int getNbTours() {
+        return nbTours;
     }
 
     @Override

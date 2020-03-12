@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CollectionDes implements ICollection<De> {
@@ -7,6 +8,10 @@ public class CollectionDes implements ICollection<De> {
     public CollectionDes(int nbDes) {
 
         listeDes = new ArrayList<>(nbDes);
+    }
+
+    public ArrayList<De> getListeDes() {
+        return listeDes;
     }
 
     class IterateurDe implements Iterateur<De> {

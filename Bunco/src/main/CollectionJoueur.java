@@ -8,6 +8,11 @@ public class CollectionJoueur implements ICollection<Joueur> {
         listeJoueurs = new ArrayList<Joueur>(nbJoueurs);
     }
 
+    @Override
+    public Iterateur<Joueur> getIterateur() {
+        return new IterateurJoueur();
+    }
+
     class IterateurJoueur implements Iterateur<Joueur> {
         private int index = 0;
 
