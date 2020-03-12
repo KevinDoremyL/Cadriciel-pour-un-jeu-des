@@ -9,14 +9,16 @@ public abstract class Framework {
     final void gameStart() {
 
         debutPartie();
-        jouerTour();//test
+        jouerTour();// test
         finPartie();// test ryad
         // test
     }
 
-    public void debutPartie() {}
+    public void debutPartie() {
+    }
 
-    public void jouerTour() {}
+    public void jouerTour() {
+    }
 
     public void finPartie() {
 
@@ -28,6 +30,5 @@ public abstract class Framework {
     abstract void calculerLeVainceur();
 
     abstract void calculerScoreTour();
-
 
 }
