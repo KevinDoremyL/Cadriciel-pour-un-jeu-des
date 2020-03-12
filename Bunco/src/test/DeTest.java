@@ -1,9 +1,6 @@
-package src.test;
-
 import static org.junit.Assert.assertTrue;
 
 import org.junit.*;
-import src.main.De;
 
 //Try
 public class DeTest {
