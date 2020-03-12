@@ -26,4 +26,7 @@ public class De implements Comparable<De> {
         return result;
     }
 
+    public int getNbFaces() {
+        return nbFaces;
+    }
 }
