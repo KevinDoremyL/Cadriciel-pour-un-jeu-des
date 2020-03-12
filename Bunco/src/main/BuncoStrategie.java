@@ -1,10 +1,12 @@
+
 public class BuncoStrategie implements Strategy {
     @Override
-    public void calculerLeVainqueur(Jeu jeu){
+    public void calculerLeVainqueur(Jeu jeu) {
 
     }
+
     @Override
-    public void calculerScoreTour(Jeu jeu){
-    //test nass
+    public void calculerScoreTour(Jeu jeu) {
+        // test nass
     }
 }

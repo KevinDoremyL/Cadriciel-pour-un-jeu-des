@@ -28,8 +28,7 @@ public class JoueurTest {
         assertEquals(Modifier.PUBLIC, testClass.getModifiers() & Modifier.PUBLIC);
         Class<?> ancestor = testClass.getSuperclass();
         assertNull(ancestor);
-        
-    
+
     }
 
     // TODO Test Unitaire 2 : Dans le cas d'obtention de 0 point si le joueur passe

@@ -1,7 +1,7 @@
 public class Jeu extends Framework {
 
     private Strategy strategy;
-    
+
     public Jeu(Strategy strategie, int nbTours) {
     }
 

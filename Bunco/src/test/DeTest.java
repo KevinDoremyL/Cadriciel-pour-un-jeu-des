@@ -1,6 +1,9 @@
-import org.junit.*;
+package src.test;
 
 import static org.junit.Assert.assertTrue;
+
+import org.junit.*;
+import src.main.De;
 
 //Try
 public class DeTest {
@@ -21,7 +24,7 @@ public class DeTest {
 		assertTrue(de1.compareTo(de2) == 1);
 	}
 
-	@Test //test 
+	@Test // test
 	public void deInferieurTest() {
 		de1.setFaceObtenue(4);
 		de2.setFaceObtenue(5);

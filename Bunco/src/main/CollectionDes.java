@@ -9,24 +9,19 @@ public class CollectionDes implements ICollection<De> {
         listeDes = new ArrayList<>(nbDes);
     }
 
-    @Override
-    public Iterateur getIterateur() {
-        return new IterateurDe() {
-        };
-    }
-
     class IterateurDe implements Iterateur<De> {
-        private int index=0;
+        private int index = 0;
+
         @Override
         public void reset() {
-            this.index=0;
+            this.index = 0;
 
         }
 
         @Override
         public De next() {
 
-            if(this.hasNext()){
+            if (this.hasNext()) {
                 return listeDes.get(index++);
             }
             return null;
@@ -40,11 +35,17 @@ public class CollectionDes implements ICollection<De> {
         @Override
         public boolean hasNext() {
 
-            if(index < listeDes.size()){
+            if (index < listeDes.size()) {
                 return true;
             }
             return false;
         }
 
+    }
+
+    @Override
+    public Iterateur<De> iterateur() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
