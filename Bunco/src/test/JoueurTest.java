@@ -31,6 +31,22 @@ public class JoueurTest {
 
     }
 
+    @Test // test
+    public void joueurScroreSuperieurTest() {
+
+        assertTrue(joueur2.compareTo(joueur1) == 1);
+    }
+
+    @Test // test
+    public void joueurScroreInferieurTest() {
+        assertTrue(joueur2.compareTo(joueur3) == -1);
+    }
+
+    @Test // test
+    public void joueurSameScroreTest() {
+        assertTrue(joueur4.compareTo(joueur3) == 0);
+    }
+
     // TODO Test Unitaire 2 : Dans le cas d'obtention de 0 point si le joueur passe
     // la main au joueur suivant
 
