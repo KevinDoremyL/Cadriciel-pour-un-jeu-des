@@ -96,10 +96,10 @@ public class BuncoStrategie implements Strategy {
                     score += 5;
                     System.out.print(score);
                     numeroTour++;
+                    actif = true;
 
                 }
             } else {
-                int pareille = 0;
                 for (De de : this.collectionDes.getListeDes()
                 ) {
                     if (de.getNbFaces() == numeroTour) {
@@ -108,6 +108,7 @@ public class BuncoStrategie implements Strategy {
                     }
                 }
                 System.out.print(score);
+                actif = true;
                 numeroTour++;
 
 
