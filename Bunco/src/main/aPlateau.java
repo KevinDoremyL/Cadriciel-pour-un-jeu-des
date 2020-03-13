@@ -1,14 +1,58 @@
+import java.util.ArrayList;
+
 public class aPlateau {
     //
+
     public static void main(String[] args) {
         // TODO Vue de l'app ( M V C )
-        System.out.println("Le plateau de jeu!");
 
-        System.out.println("Kevin First Commmit 1");
-        System.out.println("Ryad commit du chef test 2 3 4 5");
+        CollectionDes collectionDes = new CollectionDes(3);
 
-        System.out.println("Nassim test commit");
+        collectionDes.ajouterDe(new De(6));
 
+        collectionDes.ajouterDe(new De(6));
 
+        collectionDes.ajouterDe(new De(6));
+
+        De dePremier = collectionDes.getListeDes().get(0);
+
+        De deDeuxieme = collectionDes.getListeDes().get(1);
+
+        De deTroisieme= collectionDes.getListeDes().get(2);
+
+        //  while actif le tour actif tu continues à calculker
+
+        int nbTour = 0;
+
+        int nbTourMax=6;
+
+        dePremier.roll();
+
+        deDeuxieme.roll();
+
+        deTroisieme.roll();
+        System.out.println(dePremier.getNbFaces());
+        while(nbTour <= 6){
+
+            if(dePremier.getNbFaces()
+                    != nbTourMax && deDeuxieme.getNbFaces() !=nbTourMax && deTroisieme.getNbFaces() !=nbTourMax){
+
+                nbTour++;
+
+                dePremier.roll();
+
+                System.out.println(dePremier);
+            }
+
+        }
+           // System.out.println(collectionDes.getListeDes().get(0).getNbFaces());
+        }
+
+    public static void rollDices(CollectionDes collectionDes){
+        Iterateur<De> iterateur =  collectionDes.getIterateur();
+        iterateur.currentItem().roll();
+        while (iterateur.hasNext()) {
+            iterateur.next().roll();
+        }
     }
 }

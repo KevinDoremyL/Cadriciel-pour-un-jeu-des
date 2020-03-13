@@ -18,6 +18,9 @@ public class Joueur implements Comparable<Joueur> {
     public void setScore(int score) {
         this.score = score;
     }
+    public  void additionerScore(int addition){
+        this.score += addition;
+    }
 
     public int getScore() {
         return score;

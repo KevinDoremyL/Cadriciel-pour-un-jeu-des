@@ -8,6 +8,7 @@ public class CollectionDes implements ICollection<De> {
 
         listeDes = new ArrayList<>(nbDes);
 
+
     }
 
     @Override
@@ -23,6 +24,9 @@ public class CollectionDes implements ICollection<De> {
 
     public ArrayList<De> getListeDes() {
         return listeDes;
+    }
+    public void ajouterDe(De de){
+        this.listeDes.add(de);
     }
 
     class IterateurDe implements Iterateur<De> {

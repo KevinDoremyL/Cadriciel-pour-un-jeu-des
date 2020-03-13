@@ -6,6 +6,7 @@ public class Jeu extends Framework {
     public Jeu(Strategy strategie,int nbJoueur) {
         this.strategy = strategie;
         this.collectionJoueur = new CollectionJoueur(nbJoueur);
+        
     }
 
     public void setStrategy(Strategy param) {
