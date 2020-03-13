@@ -26,12 +26,17 @@ public class aPlateau {
 
         int nbTourMax=6;
 
+        int score = 0;
+
         dePremier.roll();
 
         deDeuxieme.roll();
 
         deTroisieme.roll();
+
         System.out.println(dePremier.getNbFaces());
+
+        /*
         while(nbTour <= 6){
 
             if(dePremier.getNbFaces()
@@ -46,6 +51,14 @@ public class aPlateau {
 
         }
            // System.out.println(collectionDes.getListeDes().get(0).getNbFaces());
+
+         */
+        int i = 1;
+        do {
+            System.out.println(i);
+            i++;
+        }
+        while (i <= 6);
         }
 
     public static void rollDices(CollectionDes collectionDes){
