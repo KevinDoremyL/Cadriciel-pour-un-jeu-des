@@ -67,9 +67,7 @@ public class BuncoStrategie implements Strategy {
         De deDeuxieme = this.collectionDes.getListeDes().get(1);
         De deTroisieme = this.collectionDes.getListeDes().get(2);
 
-        int nbTour = 1;
-
-        int nbTourMax = 6;
+        int numeroTour = 1;
 
         int score = 0;
 
@@ -79,41 +77,43 @@ public class BuncoStrategie implements Strategy {
 
         do {
             rollDices();
-            if (dePremier.getNbFaces() != nbTourMax && deDeuxieme.getNbFaces() != nbTourMax && deTroisieme.getNbFaces() != nbTourMax) {
+            if (dePremier.getNbFaces() != numeroTour && deDeuxieme.getNbFaces() != numeroTour && deTroisieme.getNbFaces() != numeroTour) {
                 //iterateurJoueur.currentItem().setScore(0);
                 score = 0;
-                nbTour++;
+                numeroTour++;
                 actif = false;
                 // continuer ici lire en haut les contraintes et appliquer selon elles les différents if.
             } else if (dePremier.getNbFaces() == deDeuxieme.getNbFaces() && dePremier.getNbFaces() == deTroisieme.getNbFaces()) {
 
-                if (dePremier.getNbFaces() == nbTourMax) {
+                if (dePremier.getNbFaces() == numeroTour) {
                     iterateurJoueur.currentItem().additionerScore(21);
                     score += 21;
-                    System.out.print(iterateurJoueur.currentItem().getScore());
+                    System.out.print(score);
                     actif = false;
 
                 } else {
                     iterateurJoueur.currentItem().additionerScore(5);
                     score += 5;
-                    nbTour++;
+                    System.out.print(score);
+                    numeroTour++;
 
                 }
             } else {
                 int pareille = 0;
                 for (De de : this.collectionDes.getListeDes()
                 ) {
-                    if (de.getNbFaces() == nbTour) {
+                    if (de.getNbFaces() == numeroTour) {
                         iterateurJoueur.currentItem().additionerScore(1);
                         score++;
                     }
                 }
-                nbTour++;
+                System.out.print(score);
+                numeroTour++;
 
 
             }
         }
-        while (actif);
+        while (numeroTour <= 6 && actif && score <= 21);
 
 
         return score;
