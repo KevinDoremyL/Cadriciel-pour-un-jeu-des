@@ -20,6 +20,10 @@ public class CollectionDes implements ICollection<De> {
         };
     }
 
+    public void ajoutDe(De de) {
+        listeDes.add(de);
+    }
+
     class IterateurDe implements Iterateur<De> {
         private int index=0;
         @Override

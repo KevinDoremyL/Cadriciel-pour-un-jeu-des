@@ -8,16 +8,13 @@ public class BuncoStrategie implements Strategy {
         listeDeBunco = new CollectionDes(3);
 
         for (De deBunco : listeDeBunco.getListeDes()) {
-
+            listeDeBunco.ajoutDe(deBunco);
             deBunco.setFaceObtenue(6);
         }
-
     }
 
     @Override
-    public void calculerLeVainqueur(Jeu jeu) {
-
-    }
+    public void calculerLeVainqueur(Jeu jeu) {}
 
     @Override
     public int calculerScoreTour(Jeu jeu) {
@@ -30,6 +27,9 @@ public class BuncoStrategie implements Strategy {
             while (iterateur.hasNext()) {
                 if (iterateur.currentItem().getNbFaces() == tour) {
                     nbPareil++;
+                }
+                if (nbPareil == 3 && iterateur.currentItem().getNbFaces() != tour) {
+                    nbPareil = 4;
                 }
                 iterateur.next();
             }
@@ -45,6 +45,10 @@ public class BuncoStrategie implements Strategy {
             if (nbPareil == 3) {
                 score += 21;
                 return score;
+            }
+
+            if (nbPareil == 4) {
+                score += 5;
             }
 
             if (nbPareil == 0) {
