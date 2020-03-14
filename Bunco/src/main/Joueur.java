@@ -11,11 +11,13 @@ public class Joueur implements Comparable<Joueur> {
 
     public Joueur(String nomJoueur) {
         this.nomJoueur = nomJoueur;
+        numeroJoueur++;
     }
 
     public Joueur(String nomJoueur, int scoreJoueur) {
         this.nomJoueur = nomJoueur;
         this.scoreJoueur = scoreJoueur;
+        numeroJoueur++;
     }
 
     public String getNomJoueur() {

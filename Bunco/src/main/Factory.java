@@ -4,7 +4,15 @@ public class Factory {
         return new De(nbDeFace);
     }
 
+    public static Joueur getJoueur(){
+        return new Joueur();
+    }
+
     public static Joueur getJoueur(String nom){
         return new Joueur(nom);
+    }
+
+    public static Jeu getJeu(Strategy strategy, int nbJoueur){
+        return new Jeu(strategy, nbJoueur);
     }
 }
