@@ -1,8 +1,14 @@
 public class Joueur implements Comparable<Joueur> {
     String nom;
     int score;
-    public Joueur() {
 
+    public String getNom() {
+        return nom;
+    }
+
+    public Joueur(String nom) {
+    this.nom=nom;
+    this.score=0;
     }
 
     @Override

@@ -67,9 +67,10 @@ public class BuncoStrategie implements Strategy {
         De deDeuxieme = this.collectionDes.getListeDes().get(1);
         De deTroisieme = this.collectionDes.getListeDes().get(2);
 
+
         int numeroTour = 1;
 
-        int score = 0;
+        int score=0;
 
         boolean actif = true; // pour plus tard pas maintenant
 
@@ -77,37 +78,50 @@ public class BuncoStrategie implements Strategy {
 
         do {
             rollDices();
-            if (dePremier.getNbFaces() != numeroTour && deDeuxieme.getNbFaces() != numeroTour && deTroisieme.getNbFaces() != numeroTour) {
-                //iterateurJoueur.currentItem().setScore(0);
-                score = 0;
-                numeroTour++;
-                actif = false;
-                // continuer ici lire en haut les contraintes et appliquer selon elles les différents if.
-            } else if (dePremier.getNbFaces() == deDeuxieme.getNbFaces() && dePremier.getNbFaces() == deTroisieme.getNbFaces()) {
+            System.out.println("Numéro du tour : " + numeroTour );
+            System.out.println("Dé Un : " + dePremier.getNbFaces() + " Dé Deux : " + deDeuxieme.getNbFaces() + " Dé Trois : " +deTroisieme.getNbFaces() );
+            dePremier.setFaceObtenue(2);
+            deDeuxieme.setFaceObtenue(2);
+            deTroisieme.setFaceObtenue(2);
+            System.out.println("Dé Un : " + dePremier.getNbFaces() + " Dé Deux : " + deDeuxieme.getNbFaces() + " Dé Trois : " +deTroisieme.getNbFaces() );
+            if (dePremier.getNbFaces() == deDeuxieme.getNbFaces() && dePremier.getNbFaces() == deTroisieme.getNbFaces()) { ;
+                if (dePremier.getNbFaces() == numeroTour )  {
 
-                if (dePremier.getNbFaces() == numeroTour) {
-                    iterateurJoueur.currentItem().additionerScore(21);
                     score += 21;
-                    System.out.print(score);
+                    iterateurJoueur.currentItem().setScore(score);
+                    System.out.println(iterateurJoueur.currentItem().getNom() + " Score: "+ iterateurJoueur.currentItem().getScore());
                     actif = false;
 
                 } else {
-                    iterateurJoueur.currentItem().additionerScore(5);
+
                     score += 5;
-                    System.out.print(score);
+                    iterateurJoueur.currentItem().setScore(score);
+                    System.out.println(iterateurJoueur.currentItem().getNom() + " Score "+ iterateurJoueur.currentItem().getScore());
                     numeroTour++;
+
+
                     actif = true;
 
                 }
-            } else {
+            }
+            else  if (dePremier.getNbFaces() != numeroTour && deDeuxieme.getNbFaces() != numeroTour && deTroisieme.getNbFaces() != numeroTour) {
+                //iterateurJoueur.currentItem().setScore(0);
+                score += 0;
+                System.out.println(iterateurJoueur.currentItem().getNom() + " "+ iterateurJoueur.currentItem().getScore());
+                numeroTour++;
+                actif = false;
+                // continuer ici lire en haut les contraintes et appliquer selon elles les différents if.
+            }
+            else {
                 for (De de : this.collectionDes.getListeDes()
                 ) {
                     if (de.getNbFaces() == numeroTour) {
                         iterateurJoueur.currentItem().additionerScore(1);
-                        score++;
+                        score+=1;
                     }
                 }
-                System.out.print(score);
+                iterateurJoueur.currentItem().setScore(score);
+                System.out.println(iterateurJoueur.currentItem().getNom() + " Score "+ iterateurJoueur.currentItem().getScore());
                 actif = true;
                 numeroTour++;
 
@@ -117,7 +131,7 @@ public class BuncoStrategie implements Strategy {
         while (numeroTour <= 6 && actif && score <= 21);
 
 
-        return score;
+        return iterateurJoueur.currentItem().getScore();
     }
 
 }
