@@ -12,13 +12,6 @@ public class aPlateau {
         strategie.setJeuBunco();
         System.out.println("Kevin score final " + strategie.calculerScoreTour(jeuTest));
 
-        /*
-        Jeu jeuTest = new Jeu(strategie);
-        strategie.setJeuBunco();
-        System.out.println("PartieNasim : ");
-
-       System.out.println( "Score Final " + strategie.calculerScoreTourNassim(jeuTest));
-*/
 
     }
 }
