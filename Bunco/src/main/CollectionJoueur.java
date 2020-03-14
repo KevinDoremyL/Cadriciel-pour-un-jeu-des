@@ -8,6 +8,10 @@ public class CollectionJoueur implements ICollection<Joueur> {
         listeJoueurs = new ArrayList<Joueur>(nbJoueurs);
     }
 
+    public ArrayList<Joueur> getListeJoueurs() {
+        return listeJoueurs;
+    }
+
 
     @Override
     public Iterateur<Joueur> getIterateur() {

@@ -2,6 +2,8 @@ public class BuncoStrategie implements Strategy {
 
     CollectionDes listeDeBunco;
     Iterateur<De> iterateur = listeDeBunco.getIterateur();
+    CollectionJoueur listeDeJoueurs;
+    Iterateur<Joueur> iterateurJoueur = listeDeJoueurs.getIterateur();
 
     @Override
     public void setupGame() {
@@ -11,10 +13,17 @@ public class BuncoStrategie implements Strategy {
             listeDeBunco.ajoutDe(deBunco);
             deBunco.setFaceObtenue(6);
         }
+
+        for (Joueur joueurBunco: listeDeJoueurs.getListeJoueurs()) {
+          // joueurBunco.setScoreJoueur(calculerScoreTour());
+        }
     }
 
     @Override
-    public void calculerLeVainqueur(Jeu jeu) {}
+    public void calculerLeVainqueur(Jeu jeu) {
+
+
+    }
 
     @Override
     public int calculerScoreTour(Jeu jeu) {
