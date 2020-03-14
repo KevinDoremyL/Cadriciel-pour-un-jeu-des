@@ -2,9 +2,15 @@ public class Joueur implements Comparable<Joueur> {
 
     private String nomJoueur;
     private int scoreJoueur;
+    private static int numeroJoueur = 1;
 
-    public Joueur() {
+    public Joueur(){
+        this.nomJoueur = "Joueur"+numeroJoueur;
+        numeroJoueur++;
+    }
 
+    public Joueur(String nomJoueur) {
+        this.nomJoueur = nomJoueur;
     }
 
     public Joueur(String nomJoueur, int scoreJoueur) {
