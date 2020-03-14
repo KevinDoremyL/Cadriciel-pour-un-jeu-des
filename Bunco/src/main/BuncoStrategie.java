@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class BuncoStrategie implements Strategy {
     private CollectionDes collectionDes = new CollectionDes(3);
     private int nbTour = 1;
+    private ArrayList<Integer> scoreDesJoueurs;
+    private Iterateur<Joueur>;
 
     public void setJeuBunco() {
         for(int i=0; i<3; i++){
@@ -24,6 +26,17 @@ public class BuncoStrategie implements Strategy {
 
     @Override
     public void calculerLeVainqueur(Jeu jeu){
+
+        scoreDesJoueurs = new ArrayList<>();
+
+        for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
+             ) {
+
+            scoreDesJoueurs.add(j.getScore());
+
+        }
+
+            while
 
     }
 
