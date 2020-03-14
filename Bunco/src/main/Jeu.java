@@ -1,9 +1,7 @@
 public class Jeu extends Framework {
-    public int getNbTours() {
-        return nbTours;
-    }
 
-    private int nbTours = 6;
+
+
     private CollectionJoueur collectionJoueur;
     private Strategy strategy;
     
