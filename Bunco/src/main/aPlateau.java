@@ -12,6 +12,6 @@ public class aPlateau {
         strategie.setJeuBunco();
         System.out.println("Kevin score final " + strategie.calculerScoreTour(jeuTest));
         // Version Officiel Bon push
-
+        //
     }
 }
