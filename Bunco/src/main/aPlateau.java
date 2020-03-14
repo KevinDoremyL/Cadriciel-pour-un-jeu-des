@@ -7,18 +7,18 @@ public class aPlateau {
         // TODO Vue de l'app ( M V C )
 
         BuncoStrategie strategie = new BuncoStrategie();
-
+/*
         Jeu jeuTest = new Jeu(strategie);
         strategie.setJeuBunco();
         System.out.println("Kevin score final " + strategie.calculerScoreTour(jeuTest));
+*/
 
-        /*
         Jeu jeuTest = new Jeu(strategie);
         strategie.setJeuBunco();
         System.out.println("PartieNasim : ");
 
-       System.out.println( strategie.calculerScoreTourNassim(jeuTest));
+       System.out.println( "Score Final " + strategie.calculerScoreTourNassim(jeuTest));
 
-         */
+
     }
 }
