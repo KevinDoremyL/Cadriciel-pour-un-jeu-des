@@ -40,4 +40,5 @@ public class Joueur implements Comparable<Joueur> {
     public int compareTo(Joueur o) {
         return Integer.compare(this.getScoreJoueur(), o.getScoreJoueur());
     }
+
 }

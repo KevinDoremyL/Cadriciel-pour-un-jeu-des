@@ -1,15 +1,24 @@
 public class Jeu extends Framework {
 
+    private CollectionJoueur collectionJoueur;
     private Strategy strategy;
-    private int nbTours;
-    private CollectionDes listeDes;
-    private CollectionJoueur listeJoueurs;
+    
+    public Jeu(Strategy strategie,int nbJoueur) {
+        this.strategy = strategie;
+        this.collectionJoueur = new CollectionJoueur(nbJoueur);
+    }
 
-    public Jeu(Strategy strategie, int nbJoueurs) {
-
-        this.nbTours = nbTours;
-
-        listeJoueurs = new CollectionJoueur(nbJoueurs);
+    public Jeu(Strategy strategie) {
+        this.strategy = strategie;
+        this.collectionJoueur = new CollectionJoueur(3);
+        Joueur Kevin = new Joueur("Kevin");
+        Joueur nassim = new Joueur("Nassim");
+        Joueur ryad = new Joueur("Ryad");
+        Joueur camile = new Joueur("Camile");
+        this.collectionJoueur.ajouterJoueur(Kevin);
+        this.collectionJoueur.ajouterJoueur(nassim);
+        this.collectionJoueur.ajouterJoueur(ryad);
+        this.collectionJoueur.ajouterJoueur(camile);
 
     }
 
@@ -25,8 +34,13 @@ public class Jeu extends Framework {
         strategy.calculerLeVainqueur(jeu);
     }
 
-    public int getNbTours() {
-        return nbTours;
+
+    public void setCollectionJoueur(CollectionJoueur collectionJoueur) {
+        this.collectionJoueur = collectionJoueur;
+    }
+
+    public CollectionJoueur getCollectionJoueur() {
+        return collectionJoueur;
     }
 
     @Override

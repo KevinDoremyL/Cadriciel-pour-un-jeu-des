@@ -1,4 +1,3 @@
-
 public class IterateurJoueur implements Iterateur<Joueur> {
 
     @Override

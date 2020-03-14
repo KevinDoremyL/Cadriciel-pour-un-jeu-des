@@ -19,37 +19,57 @@ public class CollectionJoueur implements ICollection<Joueur> {
         @Override
         public void reset() {
             this.index = 0;
+    }
 
-        }
+    public void ajouterJoueur(Joueur joueur){
+        this.listeJoueurs.add(joueur);
+    }
 
-        @Override
-        public Joueur next() {
-
-            if (this.hasNext()) {
-                return listeJoueurs.get(index++);
-            }
-            return null;
-        }
-
-        @Override
-        public Joueur currentItem() {
-            return listeJoueurs.get(index);
-        }
-
-        @Override
-        public boolean hasNext() {
-
-            if (index < listeJoueurs.size()) {
-                return true;
-            }
-            return false;
-        }
-
+    public ArrayList<Joueur> getListeJoueurs() {
+        return listeJoueurs;
     }
 
     @Override
-    public Iterateur<Joueur> iterateur() {
-        // TODO Auto-generated method stub
-        return null;
+    public Iterateur getIterateur() {
+        return new IterateurJoueur();
     }
-}
+
+
+
+
+//    class IterateurJoueur implements Iterateur<Joueur> {
+//        private int index=0;
+//        @Override
+//        public void reset() {
+//            this.index=0;
+//
+//        }
+//
+//        @Override
+//        public Joueur next() {
+//
+//            if(this.hasNext()){
+//
+//                return listeJoueurs.get(index++);
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        public Joueur currentItem() {
+//            return listeJoueurs.get(index);
+//        }
+//
+//        @Override
+//        public boolean hasNext() {
+//
+//
+//            if(index < listeJoueurs.size()) {
+//                return true;
+//            }
+//            return false;
+//        }
+//
+//    }
+//
+//}

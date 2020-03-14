@@ -1,23 +1,19 @@
-
 public class De implements Comparable<De> {
     private int nbFaces;
+    private int numéroDé;
 
     public De(int nbFaces) {
         this.nbFaces = nbFaces;
     }
 
     public void setFaceObtenue(int faceObtenue) {
-        this.nbFaces = faceObtenue;
+        this.numéroDé = faceObtenue;
     }
+    public void roll()
+    {
+        this.numéroDé = (int)(Math.random() * nbFaces) + 1;
 
-    public int getNbFaces() {
-        return nbFaces;
-    }
 
-    public int roll() {
-        this.nbFaces = (int) (Math.random() * nbFaces) + 1;
-
-        return this.nbFaces;
     }
 
     @Override
@@ -27,9 +23,13 @@ public class De implements Comparable<De> {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         String result = Integer.toString(this.nbFaces);
         return result;
     }
 
+    public int getNuméroDé() {
+        return numéroDé;
+    }
 }
