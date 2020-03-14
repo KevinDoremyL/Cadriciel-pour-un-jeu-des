@@ -19,32 +19,7 @@ public class BuncoStrategie implements Strategy {
             iterateur.next().roll();
         }
     }
-    public int calculerPointage() {
-        int scoreSelonBrassage = 0;
-        rollDices();
-        int dePremier = this.collectionDes.getListeDes().get(0).getNbFaces();
-        int deDeuxieme = this.collectionDes.getListeDes().get(1).getNbFaces();
-        int deTroisieme= this.collectionDes.getListeDes().get(2).getNbFaces();
 
-        if (dePremier== deDeuxieme && dePremier == deTroisieme) {
-
-            if (dePremier == this.nbTour) {
-                scoreSelonBrassage = 21;
-            } else {
-                scoreSelonBrassage = 5;
-            }
-        }
-        else {
-            for (De de : this.collectionDes.getListeDes()
-            ) {
-                if (de.getNbFaces() == nbTour) {
-                    scoreSelonBrassage++;
-                }
-            }
-        }
-
-        return  scoreSelonBrassage;
-    }
 
 
     @Override
@@ -63,6 +38,7 @@ public class BuncoStrategie implements Strategy {
          * Dans le cas d'obtention de 0 point si le joueur passe la main au joueur suivant.
          * Le classement final des joueurs avec différents scores.
          */
+        // boolean qui dit si tu retournes ou non
         De dePremier = this.collectionDes.getListeDes().get(0);
         De deDeuxieme = this.collectionDes.getListeDes().get(1);
         De deTroisieme = this.collectionDes.getListeDes().get(2);
@@ -88,7 +64,7 @@ public class BuncoStrategie implements Strategy {
 
                     score += 21;
                     iterateurJoueur.currentItem().setScore(score);
-                    System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel : "+ iterateurJoueur.currentItem().getScore());
+                    System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel BUNCO !!! : "+ iterateurJoueur.currentItem().getScore());
                     actif = false;
 
                 } else {
@@ -127,10 +103,63 @@ public class BuncoStrategie implements Strategy {
 
             }
         }
-        while (numeroTour <= 6 && actif && score <= 21);
+        while (numeroTour <= 6 && actif );
 
 
         return iterateurJoueur.currentItem().getScore();
     }
 
+    public int calculerScoreTourNassim(Jeu jeu) {
+
+        int score = 0;
+        int nbPareil = 0;
+        Iterateur<De> iterateur = this.collectionDes.getIterateur();
+        this.collectionDes.getListeDes().get(0).setFaceObtenue(2);
+        this.collectionDes.getListeDes().get(1).setFaceObtenue(2);
+        this.collectionDes.getListeDes().get(2).setFaceObtenue(2);
+
+        for (int tour = 1; tour <= 1; tour++) {
+
+
+
+            while (iterateur.hasNext()) {
+                if (iterateur.currentItem().getNbFaces() == tour) {
+
+                    nbPareil++;
+                }
+                if ((nbPareil == 3) && (iterateur.currentItem().getNbFaces() != tour)) {
+                    nbPareil = 4;
+
+                }
+
+                iterateur.next();
+            }
+
+            if (nbPareil == 1) {
+                score++;
+            }
+
+            if (nbPareil == 2) {
+                score += 2;
+            }
+
+            if (nbPareil == 3) {
+                score += 21;
+                return score;
+            }
+
+            if (nbPareil == 4) {
+                score += 5;
+
+            }
+
+            if (nbPareil == 0) {
+                return score;
+            }
+
+        }
+        System.out.println("Le score final "+ score);
+        return score;
+    }
 }
+

@@ -6,7 +6,7 @@ public class De implements Comparable<De> {
     }
 
     public void setFaceObtenue(int faceObtenue) {
-        this.nbFaces = faceObtenue;
+        this.numéroDé = faceObtenue;
     }
     public void roll()
     {

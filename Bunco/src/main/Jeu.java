@@ -1,5 +1,9 @@
 public class Jeu extends Framework {
+    public int getNbTours() {
+        return nbTours;
+    }
 
+    private int nbTours = 6;
     private CollectionJoueur collectionJoueur;
     private Strategy strategy;
     
@@ -7,6 +11,7 @@ public class Jeu extends Framework {
         this.strategy = strategie;
         this.collectionJoueur = new CollectionJoueur(nbJoueur);
     }
+
     public Jeu(Strategy strategie) {
         this.strategy = strategie;
         this.collectionJoueur = new CollectionJoueur(3);
