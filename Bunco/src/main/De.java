@@ -1,6 +1,6 @@
 public class De implements Comparable<De> {
     private int nbFaces;
-
+    private int numéroDé;
     public De(int nbFaces) {
         this.nbFaces = nbFaces;
     }
@@ -10,7 +10,7 @@ public class De implements Comparable<De> {
     }
     public void roll()
     {
-        this.nbFaces = (int)(Math.random() * nbFaces) + 1;
+        this.numéroDé = (int)(Math.random() * nbFaces) + 1;
 
 
     }
@@ -27,6 +27,6 @@ public class De implements Comparable<De> {
     }
 
     public int getNbFaces() {
-        return nbFaces;
+        return numéroDé;
     }
 }

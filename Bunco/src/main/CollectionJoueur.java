@@ -12,6 +12,11 @@ public class CollectionJoueur implements ICollection<Joueur> {
     public void ajouterJoueur(Joueur joueur){
         this.listeJoueurs.add(joueur);
     }
+
+    public ArrayList<Joueur> getListeJoueurs() {
+        return listeJoueurs;
+    }
+
     @Override
     public Iterateur getIterateur() {
         return new IterateurJoueur();

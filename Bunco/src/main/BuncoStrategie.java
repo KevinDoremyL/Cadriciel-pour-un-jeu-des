@@ -80,23 +80,22 @@ public class BuncoStrategie implements Strategy {
             rollDices();
             System.out.println("Numéro du tour : " + numeroTour );
             System.out.println("Dé Un : " + dePremier.getNbFaces() + " Dé Deux : " + deDeuxieme.getNbFaces() + " Dé Trois : " +deTroisieme.getNbFaces() );
-            dePremier.setFaceObtenue(2);
-            deDeuxieme.setFaceObtenue(2);
-            deTroisieme.setFaceObtenue(2);
-            System.out.println("Dé Un : " + dePremier.getNbFaces() + " Dé Deux : " + deDeuxieme.getNbFaces() + " Dé Trois : " +deTroisieme.getNbFaces() );
+            /*
+            Section pour faire les tests, exemple changer les valeurs des dés pour voir si l'algorithme marche
+             */
             if (dePremier.getNbFaces() == deDeuxieme.getNbFaces() && dePremier.getNbFaces() == deTroisieme.getNbFaces()) { ;
                 if (dePremier.getNbFaces() == numeroTour )  {
 
                     score += 21;
                     iterateurJoueur.currentItem().setScore(score);
-                    System.out.println(iterateurJoueur.currentItem().getNom() + " Score: "+ iterateurJoueur.currentItem().getScore());
+                    System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel : "+ iterateurJoueur.currentItem().getScore());
                     actif = false;
 
                 } else {
 
                     score += 5;
                     iterateurJoueur.currentItem().setScore(score);
-                    System.out.println(iterateurJoueur.currentItem().getNom() + " Score "+ iterateurJoueur.currentItem().getScore());
+                    System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
                     numeroTour++;
 
 
@@ -107,7 +106,7 @@ public class BuncoStrategie implements Strategy {
             else  if (dePremier.getNbFaces() != numeroTour && deDeuxieme.getNbFaces() != numeroTour && deTroisieme.getNbFaces() != numeroTour) {
                 //iterateurJoueur.currentItem().setScore(0);
                 score += 0;
-                System.out.println(iterateurJoueur.currentItem().getNom() + " "+ iterateurJoueur.currentItem().getScore());
+                System.out.println(iterateurJoueur.currentItem().getNom() + " Score Actuel "+ iterateurJoueur.currentItem().getScore());
                 numeroTour++;
                 actif = false;
                 // continuer ici lire en haut les contraintes et appliquer selon elles les différents if.
@@ -121,7 +120,7 @@ public class BuncoStrategie implements Strategy {
                     }
                 }
                 iterateurJoueur.currentItem().setScore(score);
-                System.out.println(iterateurJoueur.currentItem().getNom() + " Score "+ iterateurJoueur.currentItem().getScore());
+                System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
                 actif = true;
                 numeroTour++;
 

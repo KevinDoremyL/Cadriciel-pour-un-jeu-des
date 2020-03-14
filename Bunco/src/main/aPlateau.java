@@ -9,6 +9,6 @@ public class aPlateau {
         BuncoStrategie strategie = new BuncoStrategie();
         Jeu jeuTest = new Jeu(strategie);
         strategie.setJeuBunco();
-        System.out.print(strategie.calculerScoreTour(jeuTest));
+        System.out.print("Kevin score final " + strategie.calculerScoreTour(jeuTest));
     }
 }
