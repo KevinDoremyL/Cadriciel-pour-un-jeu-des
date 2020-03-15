@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class BuncoStrategie implements Strategy {
-
     private CollectionDes collectionDes = new CollectionDes(3);
     private int nbTour = 1;
 
@@ -14,28 +13,27 @@ public class BuncoStrategie implements Strategy {
 
 
     public void rollDices(){
-      Iterateur<De> iterateur =  collectionDes.getIterateur();
-      iterateur.currentItem().roll();
+        Iterateur<De> iterateur =  collectionDes.getIterateur();
+        iterateur.currentItem().roll();
         while (iterateur.hasNext()) {
             iterateur.next().roll();
         }
     }
 
+
     @Override
     public void setupGame() {
-        listeDeBunco = new CollectionDes(3);
-
-        for (De deBunco : listeDeBunco.getListeDes()) {
-
-            deBunco.setFaceObtenue(6);
+        for(int i=0; i<3; i++){
+            collectionDes.ajouterDe(new De(6));
         }
 
     }
 
     @Override
-    public void calculerLeVainqueur(Jeu jeu) {
+    public void calculerLeVainqueur(Jeu jeu){
 
     }
+
 
 
     @Override
@@ -117,6 +115,8 @@ public class BuncoStrategie implements Strategy {
 
         return iterateurJoueur.currentItem().getScore();
     }
+
+
 
 }
 

@@ -6,19 +6,7 @@ public class CollectionJoueur implements ICollection<Joueur> {
 
     public CollectionJoueur(int nbJoueurs) {
         listeJoueurs = new ArrayList<Joueur>(nbJoueurs);
-    }
 
-    @Override
-    public Iterateur<Joueur> getIterateur() {
-        return new IterateurJoueur();
-    }
-
-    class IterateurJoueur implements Iterateur<Joueur> {
-        private int index = 0;
-
-        @Override
-        public void reset() {
-            this.index = 0;
     }
 
     public void ajouterJoueur(Joueur joueur){
@@ -37,39 +25,37 @@ public class CollectionJoueur implements ICollection<Joueur> {
 
 
 
-//    class IterateurJoueur implements Iterateur<Joueur> {
-//        private int index=0;
-//        @Override
-//        public void reset() {
-//            this.index=0;
-//
-//        }
-//
-//        @Override
-//        public Joueur next() {
-//
-//            if(this.hasNext()){
-//
-//                return listeJoueurs.get(index++);
-//            }
-//            return null;
-//        }
-//
-//        @Override
-//        public Joueur currentItem() {
-//            return listeJoueurs.get(index);
-//        }
-//
-//        @Override
-//        public boolean hasNext() {
-//
-//
-//            if(index < listeJoueurs.size()) {
-//                return true;
-//            }
-//            return false;
-//        }
-//
-//    }
-//
-//}
+    class IterateurJoueur implements Iterateur<Joueur> {
+        private int index=0;
+        @Override
+        public void reset() {
+            this.index=0;
+
+        }
+
+        @Override
+        public Joueur next() {
+
+            if(this.hasNext()){
+                return listeJoueurs.get(index++);
+            }
+            return null;
+        }
+
+        @Override
+        public Joueur currentItem() {
+            return listeJoueurs.get(index);
+        }
+
+        @Override
+        public boolean hasNext() {
+
+            if(index < listeJoueurs.size()) {
+                return true;
+            }
+            return false;
+        }
+
+    }
+
+}

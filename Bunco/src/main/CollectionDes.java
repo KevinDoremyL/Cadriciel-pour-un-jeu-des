@@ -67,9 +67,5 @@ public class CollectionDes implements ICollection<De> {
 
     }
 
-    @Override
-    public Iterateur<De> iterateur() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+
 }

@@ -9,7 +9,7 @@ public class aPlateau {
         BuncoStrategie strategie = new BuncoStrategie();
 
         Jeu jeuTest = new Jeu(strategie);
-        strategie.setJeuBunco();
+        strategie.setupGame();
         System.out.println("Kevin score final " + strategie.calculerScoreTour(jeuTest));
         // Version Officiel Bon push
         //

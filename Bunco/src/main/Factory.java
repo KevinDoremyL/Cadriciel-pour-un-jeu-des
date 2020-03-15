@@ -5,7 +5,7 @@ public class Factory {
     }
 
     public static Joueur getJoueur(){
-        return new Joueur();
+        return new Joueur("");
     }
 
     public static Joueur getJoueur(String nom){
