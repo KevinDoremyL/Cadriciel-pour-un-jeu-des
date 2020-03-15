@@ -88,6 +88,7 @@ public class BuncoStrategie implements Strategy {
 
                     score += 21;
                   //  iterateurJoueur.currentItem().setScore(score);
+                    // poulie
                    // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel BUNCO !!! : "+ iterateurJoueur.currentItem().getScore());
                     System.out.println("Joueur Test" + " ScoreActuel BUNCO !!! : "+ score);
 
