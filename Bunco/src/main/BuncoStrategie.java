@@ -1,5 +1,7 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class BuncoStrategie implements Strategy {
     private CollectionDes collectionDes = new CollectionDes(3);
@@ -24,27 +26,31 @@ public class BuncoStrategie implements Strategy {
 
 
     @Override
-    public void calculerLeVainqueur(Jeu jeu){
+    public ArrayList<Joueur> calculerLeVainqueur(Jeu jeu){
 
-        for(Joueur j : jeu.getCollectionJoueur().getListeJoueurs()){
-            j.setScore(calculerScoreTour(jeu));
-        }
-        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs(), Collections.reverseOrder());
-       // Collections.reverse(listeJoueurDuJeu.getListeJoueurs());
-/*
+
+
         ArrayList ListeJoueurQuiJoue = new ArrayList<>();
 
         for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
         ) {
 
-            ListeJoueurQuiJoue.add(j.getScore());
+           j.setScore(calculerScoreTour(jeu));
         }
 
-        Collections.sort(ListeJoueurQuiJoue);
+        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs(), new Comparator<Joueur>() {
+            @Override
+            public int compare(Joueur j1, Joueur j2) {
+                return  j2.getScore() - j1.getScore();
+            }
+        });
+
+        return jeu.getCollectionJoueur().getListeJoueurs();
 
 
-    ArrayList listeJoueurTrier = new ArrayList<Joueur>();
-*/
+
+
+
     }
 
 

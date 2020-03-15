@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class aPlateau {
@@ -11,11 +12,13 @@ public class aPlateau {
         Jeu jeuTest = new Jeu(strategie);
         strategie.setJeuBunco();
        // System.out.println("Joueur Test " + strategie.calculerScoreTour(jeuTest));
-        strategie.calculerLeVainqueur(jeuTest);
-        for (Joueur j:
-            jeuTest.getCollectionJoueur().getListeJoueurs() ) {
+        ArrayList<Joueur> listeJoueur  = strategie.calculerLeVainqueur(jeuTest);
+        for (Joueur j:listeJoueur
+            ) {
             System.out.println("Joueur : "+j.getNom() + " Score : " + j.getScore());
         }
+
+
         // Version Officiel Bon push
         //
     }

@@ -13,8 +13,8 @@ public class Joueur implements Comparable<Joueur> {
 
     @Override
     public int compareTo(Joueur o) {
-        // TODO Auto-generated method stub
-        return 0;
+
+      return Integer.compare(this.getScore(),o.getScore());
     }
 
     public void setNom(String nom) {
