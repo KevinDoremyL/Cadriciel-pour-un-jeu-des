@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -41,12 +42,7 @@ public class BuncoStrategie implements Strategy {
             j.setScore(calculerScoreTour(jeu));
         }
 
-        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs(), new Comparator<Joueur>() {
-            @Override
-            public int compare(Joueur j1, Joueur j2) {
-                return  j2.getScore() - j1.getScore();
-            }
-        });
+        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs());
 
         return jeu.getCollectionJoueur().getListeJoueurs();
     }
