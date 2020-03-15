@@ -9,6 +9,7 @@ public class De implements Comparable<De> {
     public void setFaceObtenue(int faceObtenue) {
         this.numeroDe = faceObtenue;
     }
+
     public void roll()
     {
         this.numeroDe = (int)(Math.random() * nbFaces) + 1;
