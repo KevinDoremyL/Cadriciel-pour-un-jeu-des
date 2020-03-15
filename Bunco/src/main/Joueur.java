@@ -4,8 +4,8 @@ public class Joueur implements Comparable<Joueur> {
     private int scoreJoueur;
     private static int numeroJoueur = 1;
 
-    public Joueur(){
-        this.nomJoueur = "Joueur"+numeroJoueur;
+    public Joueur() {
+        this.nomJoueur = "Joueur" + numeroJoueur;
         numeroJoueur++;
     }
 
@@ -35,13 +35,14 @@ public class Joueur implements Comparable<Joueur> {
     public void setScore(int scoreJoueur) {
         this.scoreJoueur = scoreJoueur;
     }
-    public void ajouterScore(int scoreAjouteur){
-        this.scoreJoueur+= scoreAjouteur;
+
+    public void ajouterScore(int scoreAjouteur) {
+        this.scoreJoueur += scoreAjouteur;
     }
 
     @Override
     public int compareTo(Joueur o) {
-        return Integer.compare(o.getScore(),this.getScore());
+        return Integer.compare(o.getScore(), this.getScore());
     }
 
 }

@@ -28,7 +28,6 @@ public class JoueurTest {
         assertEquals(Modifier.PUBLIC, testClass.getModifiers() & Modifier.PUBLIC);
         Class<?> ancestor = testClass.getSuperclass();
         assertNull(ancestor);
-
     }
 
     @Test // test
@@ -45,6 +44,26 @@ public class JoueurTest {
     @Test // test
     public void joueurSameScroreTest() {
         assertTrue(joueur4.compareTo(joueur3) == 0);
+    }
+
+    @Test // test
+    public void joueur_AjouteScore_Test() {
+        joueur1.ajouterScore(22);
+        // 22 points plus le score actuel de 6
+        // le total est supposer faire 28
+        assertTrue(joueur1.getScore() == 28);
+    }
+
+    @Test
+    public void joueur_Constructor_String_Test() {
+        Joueur joueurTest = new Joueur("Junior");
+        assertEquals("Junior", joueurTest.getNom());
+
+    }
+
+    @Test
+    public void joueur_Constructor_String_Int_Test() {
+        assertEquals(new Joueur("Junior", 6), joueur1);
     }
 
     // TODO Test Unitaire 2 : Dans le cas d'obtention de 0 point si le joueur passe
