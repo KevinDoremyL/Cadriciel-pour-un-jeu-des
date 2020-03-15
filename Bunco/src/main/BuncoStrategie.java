@@ -31,21 +31,12 @@ public class BuncoStrategie implements Strategy {
     @Override
     public ArrayList<Joueur> calculerLeVainqueur(Jeu jeu){
 
-
-        ArrayList ListeJoueurQuiJoue = new ArrayList<>();
-
-        for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
-        ) {
+        for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()) {
 
             j.setScore(calculerScoreTour(jeu));
         }
 
-        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs(), new Comparator<Joueur>() {
-            @Override
-            public int compare(Joueur j1, Joueur j2) {
-                return  j2.getScore() - j1.getScore();
-            }
-        });
+        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs());
 
         return jeu.getCollectionJoueur().getListeJoueurs();
 
