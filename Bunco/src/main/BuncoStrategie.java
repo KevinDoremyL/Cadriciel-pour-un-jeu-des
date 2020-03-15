@@ -1,5 +1,5 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -26,14 +26,13 @@ public class BuncoStrategie implements Strategy {
 
     @Override
     public void setupGame() {
-        for(int i=0; i<3; i++){
-            collectionDes.ajouterDe(new De(6));
-        }
 
     }
 
     @Override
     public ArrayList<Joueur> calculerLeVainqueur(Jeu jeu){
+
+
         ArrayList ListeJoueurQuiJoue = new ArrayList<>();
 
         for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
@@ -42,9 +41,19 @@ public class BuncoStrategie implements Strategy {
             j.setScore(calculerScoreTour(jeu));
         }
 
-        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs());
+        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs(), new Comparator<Joueur>() {
+            @Override
+            public int compare(Joueur j1, Joueur j2) {
+                return  j2.getScore() - j1.getScore();
+            }
+        });
 
         return jeu.getCollectionJoueur().getListeJoueurs();
+
+
+
+
+
     }
 
 
@@ -63,76 +72,64 @@ public class BuncoStrategie implements Strategy {
         De deDeuxieme = this.collectionDes.getListeDes().get(1);
         De deTroisieme = this.collectionDes.getListeDes().get(2);
 
-
-        int numeroTour = 1;
-
         int score=0;
 
-        boolean actif = true; // pour plus tard pas maintenant
+        boolean actif = true;
 
-       // Iterateur<Joueur> iterateurJoueur = jeu.getCollectionJoueur().getIterateur();
+        Iterateur<Joueur> iterateur = jeu.getCollectionJoueur().getIterateur();
 
-        do {
-            rollDices();
-            System.out.println("Numéro du tour : " + numeroTour );
-            System.out.println("Dé Un : " + dePremier.getNuméroDé() + " Dé Deux : " + deDeuxieme.getNuméroDé() + " Dé Trois : " +deTroisieme.getNuméroDé() );
-            /*
-            Section pour faire les tests, exemple changer les valeurs des dés pour voir si l'algorithme marche
-             */
-            if (dePremier.getNuméroDé() == deDeuxieme.getNuméroDé() && dePremier.getNuméroDé() == deTroisieme.getNuméroDé()) { ;
-                if (dePremier.getNuméroDé() == numeroTour )  {
+        for(int numeroTourJeu=1; numeroTourJeu<=6;numeroTourJeu++) {
+            do {
+                rollDices();
+                System.out.println("Numéro du tour : " + numeroTourJeu);
+                System.out.println("Dé Un : " + dePremier.getNuméroDé() + " Dé Deux : " + deDeuxieme.getNuméroDé() + " Dé Trois : " + deTroisieme.getNuméroDé());
 
-                    score += 21;
-                  //  iterateurJoueur.currentItem().setScore(score);
-                    // poulie
-                   // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel BUNCO !!! : "+ iterateurJoueur.currentItem().getScore());
-                    System.out.println("Joueur Test" + " ScoreActuel BUNCO !!! : "+ score);
 
+
+                if (dePremier.getNuméroDé() == deDeuxieme.getNuméroDé() && dePremier.getNuméroDé() == deTroisieme.getNuméroDé()) {
+
+                    if (dePremier.getNuméroDé() == numeroTourJeu) {
+
+                        score += 21;
+
+                        System.out.println("Joueur Test" + " ScoreActuel BUNCO !!! : " + score);
+
+                        actif = false;
+
+                    } else {
+
+                        score += 5;
+
+                        System.out.println("Joueur Test" + " ScoreActuel : " + score);
+
+
+
+                        actif = true;
+
+                    }
+                } else if (dePremier.getNuméroDé() != numeroTourJeu && deDeuxieme.getNuméroDé() != numeroTourJeu && deTroisieme.getNuméroDé() != numeroTourJeu) {
+
+                    score += 0;
+                    System.out.println("Joueur Test" + " ScoreActuel : " + score);
                     actif = false;
 
                 } else {
+                    for (De de : this.collectionDes.getListeDes()
+                    ) {
+                        if (de.getNuméroDé() == numeroTourJeu) {
 
-                    score += 5;
-                   // iterateurJoueur.currentItem().setScore(score);
-                   // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
-                   // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel BUNCO !!! : "+ iterateurJoueur.currentItem().getScore());
-                    System.out.println("Joueur Test" + " ScoreActuel : "+ score);
-                    numeroTour++;
-
-
+                            score += 1;
+                        }
+                    }
+                    System.out.println("Joueur Test" + " ScoreActuel : " + score);
                     actif = true;
 
+
                 }
             }
-            else  if (dePremier.getNuméroDé() != numeroTour && deDeuxieme.getNuméroDé() != numeroTour && deTroisieme.getNuméroDé() != numeroTour) {
-                //iterateurJoueur.currentItem().setScore(0);
-                score += 0;
-               // System.out.println(iterateurJoueur.currentItem().getNom() + " Score Actuel "+ iterateurJoueur.currentItem().getScore());
-                System.out.println("Joueur Test" + " ScoreActuel : "+ score);
-                numeroTour++;
-                actif = false;
-                // continuer ici lire en haut les contraintes et appliquer selon elles les différents if.
-            }
-            else {
-                for (De de : this.collectionDes.getListeDes()
-                ) {
-                    if (de.getNuméroDé() == numeroTour) {
-                      //  iterateurJoueur.currentItem().additionerScore(1);
-                        score+=1;
-                    }
-                }
-               // iterateurJoueur.currentItem().setScore(score);
-               // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
-                System.out.println("Joueur Test" + " ScoreActuel : "+ score);
-                actif = true;
-                numeroTour++;
+            while (actif );
 
-
-            }
         }
-        while (numeroTour <= 6 && actif );
-
-
         return score;
     }
 

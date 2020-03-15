@@ -23,19 +23,19 @@ public class UserInterface {
         return UserInterface.promptUserForInt();
     }
 
-    public static ArrayList<Joueur> peuplerJoueurs(){
-
-        System.out.println("Choissisez le nombre de joueur: ");
-        int nombreDeJoueur = promptUserForInt();
-
-        CollectionJoueur joueurs = new CollectionJoueur(nombreDeJoueur);
-        int joueurCreer = 0;
-        String nom = "";
-        while(joueurCreer <= nombreDeJoueur){
-
-        }
-
-    }
+//    public static ArrayList<Joueur> peuplerJoueurs(){
+//
+//        System.out.println("Choissisez le nombre de joueur: ");
+//        int nombreDeJoueur = promptUserForInt();
+//
+//        CollectionJoueur joueurs = new CollectionJoueur(nombreDeJoueur);
+//        int joueurCreer = 0;
+//        String nom = "";
+//        while(joueurCreer <= nombreDeJoueur){
+//
+//        }
+//
+//    }
 
     public static int promptUserForInt(){
         int value = 0;
