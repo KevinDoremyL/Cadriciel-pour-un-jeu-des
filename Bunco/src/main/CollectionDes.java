@@ -11,7 +11,7 @@ public class CollectionDes implements ICollection<De> {
     }
 
     @Override
-    public Iterateur getIterateur() {
+    public Iterateur<De> getIterateur() {
         return new IterateurDe();
     }
 
