@@ -12,14 +12,11 @@ public class De implements Comparable<De> {
     public void roll()
     {
         this.numeroDe = (int)(Math.random() * nbFaces) + 1;
-
-
     }
 
     @Override
     public int compareTo(De o) {
-        // TODO Auto-generated method stub
-        return 0;
+        return Integer.compare(this.getNumeroDe(),o.getNumeroDe());
     }
 
     @Override
