@@ -9,9 +9,13 @@ public class aPlateau {
         BuncoStrategie strategie = new BuncoStrategie();
 
         Jeu jeuTest = new Jeu(strategie);
-        strategie.setupGame();
-        System.out.println("Kevin score final " + strategie.calculerScoreTour(jeuTest));
-        // Version Officiel Bon push
-        //
+        strategie.setJeuBunco();
+        // System.out.println("Joueur Test " + strategie.calculerScoreTour(jeuTest));
+        ArrayList<Joueur> listeJoueur  = strategie.calculerLeVainqueur(jeuTest);
+        for (Joueur j:listeJoueur
+        ) {
+            System.out.println("Joueur : "+j.getNom() + " Score : " + j.getScore());
+        }
+
     }
 }
