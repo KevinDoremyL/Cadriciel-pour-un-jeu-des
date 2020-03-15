@@ -30,14 +30,17 @@ public class CollectionJoueur implements ICollection<Joueur> {
         @Override
         public void reset() {
             this.index=0;
-
         }
 
         @Override
         public Joueur next() {
 
+            Joueur nextJoueur = null;
+
             if(this.hasNext()){
-                return listeJoueurs.get(index++);
+                nextJoueur = listeJoueurs.get(index++);
+                this.index++;
+                return nextJoueur;
             }
             return null;
         }

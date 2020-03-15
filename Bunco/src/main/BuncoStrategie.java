@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -82,13 +81,13 @@ public class BuncoStrategie implements Strategy {
             do {
                 rollDices();
                 System.out.println("Numéro du tour : " + numeroTourJeu);
-                System.out.println("Dé Un : " + dePremier.getNuméroDé() + " Dé Deux : " + deDeuxieme.getNuméroDé() + " Dé Trois : " + deTroisieme.getNuméroDé());
+                System.out.println("Dé Un : " + dePremier.getNumeroDe() + " Dé Deux : " + deDeuxieme.getNumeroDe() + " Dé Trois : " + deTroisieme.getNumeroDe());
 
 
 
-                if (dePremier.getNuméroDé() == deDeuxieme.getNuméroDé() && dePremier.getNuméroDé() == deTroisieme.getNuméroDé()) {
+                if (dePremier.getNumeroDe() == deDeuxieme.getNumeroDe() && dePremier.getNumeroDe() == deTroisieme.getNumeroDe()) {
 
-                    if (dePremier.getNuméroDé() == numeroTourJeu) {
+                    if (dePremier.getNumeroDe() == numeroTourJeu) {
 
                         score += 21;
 
@@ -107,7 +106,7 @@ public class BuncoStrategie implements Strategy {
                         actif = true;
 
                     }
-                } else if (dePremier.getNuméroDé() != numeroTourJeu && deDeuxieme.getNuméroDé() != numeroTourJeu && deTroisieme.getNuméroDé() != numeroTourJeu) {
+                } else if (dePremier.getNumeroDe() != numeroTourJeu && deDeuxieme.getNumeroDe() != numeroTourJeu && deTroisieme.getNumeroDe() != numeroTourJeu) {
 
                     score += 0;
                     System.out.println("Joueur Test" + " ScoreActuel : " + score);
@@ -116,7 +115,7 @@ public class BuncoStrategie implements Strategy {
                 } else {
                     for (De de : this.collectionDes.getListeDes()
                     ) {
-                        if (de.getNuméroDé() == numeroTourJeu) {
+                        if (de.getNumeroDe() == numeroTourJeu) {
 
                             score += 1;
                         }
