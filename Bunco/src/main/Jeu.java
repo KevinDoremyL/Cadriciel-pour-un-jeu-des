@@ -4,10 +4,12 @@ public class Jeu extends Framework {
 
     private CollectionJoueur collectionJoueur;
     private Strategy strategy;
+    private int nbJoueur;
     
     public Jeu(Strategy strategie,int nbJoueur) {
         this.strategy = strategie;
         this.collectionJoueur = new CollectionJoueur(nbJoueur);
+        this.nbJoueur = nbJoueur;
     }
 
     public Jeu(Strategy strategie) {

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class BuncoStrategie implements Strategy {
     private CollectionDes collectionDes = new CollectionDes(3);
@@ -25,6 +26,25 @@ public class BuncoStrategie implements Strategy {
     @Override
     public void calculerLeVainqueur(Jeu jeu){
 
+        for(Joueur j : jeu.getCollectionJoueur().getListeJoueurs()){
+            j.setScore(calculerScoreTour(jeu));
+        }
+        Collections.sort(jeu.getCollectionJoueur().getListeJoueurs(), Collections.reverseOrder());
+       // Collections.reverse(listeJoueurDuJeu.getListeJoueurs());
+/*
+        ArrayList ListeJoueurQuiJoue = new ArrayList<>();
+
+        for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
+        ) {
+
+            ListeJoueurQuiJoue.add(j.getScore());
+        }
+
+        Collections.sort(ListeJoueurQuiJoue);
+
+
+    ArrayList listeJoueurTrier = new ArrayList<Joueur>();
+*/
     }
 
 
@@ -50,7 +70,7 @@ public class BuncoStrategie implements Strategy {
 
         boolean actif = true; // pour plus tard pas maintenant
 
-        Iterateur<Joueur> iterateurJoueur = jeu.getCollectionJoueur().getIterateur();
+       // Iterateur<Joueur> iterateurJoueur = jeu.getCollectionJoueur().getIterateur();
 
         do {
             rollDices();
@@ -63,15 +83,19 @@ public class BuncoStrategie implements Strategy {
                 if (dePremier.getNuméroDé() == numeroTour )  {
 
                     score += 21;
-                    iterateurJoueur.currentItem().setScore(score);
-                    System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel BUNCO !!! : "+ iterateurJoueur.currentItem().getScore());
+                  //  iterateurJoueur.currentItem().setScore(score);
+                   // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel BUNCO !!! : "+ iterateurJoueur.currentItem().getScore());
+                    System.out.println("Joueur Test" + " ScoreActuel BUNCO !!! : "+ score);
+
                     actif = false;
 
                 } else {
 
                     score += 5;
-                    iterateurJoueur.currentItem().setScore(score);
-                    System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
+                   // iterateurJoueur.currentItem().setScore(score);
+                   // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
+                   // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel BUNCO !!! : "+ iterateurJoueur.currentItem().getScore());
+                    System.out.println("Joueur Test" + " ScoreActuel : "+ score);
                     numeroTour++;
 
 
@@ -82,7 +106,8 @@ public class BuncoStrategie implements Strategy {
             else  if (dePremier.getNuméroDé() != numeroTour && deDeuxieme.getNuméroDé() != numeroTour && deTroisieme.getNuméroDé() != numeroTour) {
                 //iterateurJoueur.currentItem().setScore(0);
                 score += 0;
-                System.out.println(iterateurJoueur.currentItem().getNom() + " Score Actuel "+ iterateurJoueur.currentItem().getScore());
+               // System.out.println(iterateurJoueur.currentItem().getNom() + " Score Actuel "+ iterateurJoueur.currentItem().getScore());
+                System.out.println("Joueur Test" + " ScoreActuel : "+ score);
                 numeroTour++;
                 actif = false;
                 // continuer ici lire en haut les contraintes et appliquer selon elles les différents if.
@@ -91,12 +116,13 @@ public class BuncoStrategie implements Strategy {
                 for (De de : this.collectionDes.getListeDes()
                 ) {
                     if (de.getNuméroDé() == numeroTour) {
-                        iterateurJoueur.currentItem().additionerScore(1);
+                      //  iterateurJoueur.currentItem().additionerScore(1);
                         score+=1;
                     }
                 }
-                iterateurJoueur.currentItem().setScore(score);
-                System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
+               // iterateurJoueur.currentItem().setScore(score);
+               // System.out.println(iterateurJoueur.currentItem().getNom() + " ScoreActuel "+ iterateurJoueur.currentItem().getScore());
+                System.out.println("Joueur Test" + " ScoreActuel : "+ score);
                 actif = true;
                 numeroTour++;
 
@@ -106,7 +132,7 @@ public class BuncoStrategie implements Strategy {
         while (numeroTour <= 6 && actif );
 
 
-        return iterateurJoueur.currentItem().getScore();
+        return score;
     }
 
 

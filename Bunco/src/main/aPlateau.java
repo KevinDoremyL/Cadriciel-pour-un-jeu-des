@@ -10,7 +10,12 @@ public class aPlateau {
 
         Jeu jeuTest = new Jeu(strategie);
         strategie.setJeuBunco();
-        System.out.println("Kevin score final " + strategie.calculerScoreTour(jeuTest));
+       // System.out.println("Joueur Test " + strategie.calculerScoreTour(jeuTest));
+        strategie.calculerLeVainqueur(jeuTest);
+        for (Joueur j:
+            jeuTest.getCollectionJoueur().getListeJoueurs() ) {
+            System.out.println("Joueur : "+j.getNom() + " Score : " + j.getScore());
+        }
         // Version Officiel Bon push
         //
     }
