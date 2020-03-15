@@ -1,3 +1,7 @@
+import org.junit.Test;
+import java.lang.reflect.Modifier;
+import static org.junit.Assert.*;
+
 public class JeuTest {
     private static Class<Jeu> testClass;
 
