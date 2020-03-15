@@ -1,13 +1,11 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class BuncoStrategie implements Strategy {
     private CollectionDes collectionDes = new CollectionDes(3);
     private int nbTour = 1;
     private ArrayList<Integer> scoreDesJoueurs;
     CollectionJoueur listeDeJoueurs;
+    private ArrayList<Joueur> joueurArrayList = listeDeJoueurs.getListeJoueurs();
     Iterateur<Joueur> iterateurJoueur = listeDeJoueurs.getIterateur();
 
     public void setJeuBunco() {
@@ -31,16 +29,22 @@ public class BuncoStrategie implements Strategy {
     @Override
     public void calculerLeVainqueur(Jeu jeu){
 
-        scoreDesJoueurs = new ArrayList<>();
+//        scoreDesJoueurs = new ArrayList<>();
+//
+//        for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
+//             ) {
+//
+//            scoreDesJoueurs.add(j.getScore());
+//        }
+//
+//        Collections.sort(scoreDesJoueurs, Collections.reverseOrder());
 
-        for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
-             ) {
-
-            scoreDesJoueurs.add(j.getScore());
-        }
-
-        Collections.sort(scoreDesJoueurs);
-
+        Collections.sort(joueurArrayList, new Comparator<Joueur>() {
+            @Override
+            public int compare(Joueur j1, Joueur j2) {
+                return j1.getScore() - j2.getScore();
+            }
+        });
 
 
     }
