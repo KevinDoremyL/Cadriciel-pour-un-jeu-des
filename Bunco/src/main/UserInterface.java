@@ -1,4 +1,5 @@
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -10,11 +11,30 @@ public class UserInterface {
     public static void debutPartie(){
 
         System.out.println("----- Initialisation partie -----");
+        int choixJeu = choixJeu();
+
+    }
+
+    public static int choixJeu(){
+
         System.out.println("Veuillez choisir un jeu : ");
         System.out.println("1 - Bunco");
-        System.out.println("2 - Autre future jeu\n");
-        int value = UserInterface.promptUserForInt();
-        System.out.println(value);
+        System.out.println("2 - Autre futur jeu\n");
+        return UserInterface.promptUserForInt();
+    }
+
+    public static ArrayList<Joueur> peuplerJoueurs(){
+
+        System.out.println("Choissisez le nombre de joueur: ");
+        int nombreDeJoueur = promptUserForInt();
+
+        CollectionJoueur joueurs = new CollectionJoueur(nombreDeJoueur);
+        int joueurCreer = 0;
+        String nom = "";
+        while(joueurCreer <= nombreDeJoueur){
+
+        }
+
     }
 
     public static int promptUserForInt(){
@@ -30,6 +50,27 @@ public class UserInterface {
             }
         }
         return value;
+    }
+
+    public static String promptUserForName(){
+        String name = "";
+        Scanner scanner = new Scanner(new InputStreamReader(System.in));
+
+        while(name.isEmpty()) {
+            System.out.println("Entrez un nom: ");
+            name = scanner.nextLine();
+        }
+        return name;
+    }
+
+
+    public static void montrerGagnant(ArrayList<Joueur> tableJoueur){
+        System.out.println("-- Tableau de pointage --");
+
+        for ( Joueur j : tableJoueur){
+            System.out.println(j.getNom()+"\t : "+j.getScore());
+        }
+
     }
 
 }
