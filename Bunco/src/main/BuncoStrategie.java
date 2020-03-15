@@ -72,6 +72,7 @@ public class BuncoStrategie implements Strategy {
 
         boolean actif = true; // pour plus tard pas maintenant
 
+        Iterateur<Joueur> iterateur = jeu.getCollectionJoueur().getIterateur();
 
         for(int numeroTourJeu=1; numeroTourJeu<=6;numeroTourJeu++) {
             do {
@@ -79,8 +80,10 @@ public class BuncoStrategie implements Strategy {
                 System.out.println("Numéro du tour : " + numeroTourJeu);
                 System.out.println("Dé Un : " + dePremier.getNuméroDé() + " Dé Deux : " + deDeuxieme.getNuméroDé() + " Dé Trois : " + deTroisieme.getNuméroDé());
 
+
+
                 if (dePremier.getNuméroDé() == deDeuxieme.getNuméroDé() && dePremier.getNuméroDé() == deTroisieme.getNuméroDé()) {
-                    ;
+
                     if (dePremier.getNuméroDé() == numeroTourJeu) {
 
                         score += 21;
@@ -121,7 +124,7 @@ public class BuncoStrategie implements Strategy {
 
                 }
             }
-            while (actif);
+            while (actif );
 
         }
         return score;
