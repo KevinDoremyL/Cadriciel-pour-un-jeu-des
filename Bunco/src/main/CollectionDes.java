@@ -6,20 +6,13 @@ public class CollectionDes implements ICollection<De> {
 
     public CollectionDes(int nbDes) {
 
-        listeDes = new ArrayList<>(nbDes);
+        listeDes = new ArrayList<De>(nbDes);
 
     }
 
     @Override
     public Iterateur getIterateur() {
         return new IterateurDe();
-    }
-    public void setFaceDesDes(int nbFaces){
-        for (De de:
-                this.listeDes) {
-        de.setFaceObtenue(nbFaces);
-        }
-
     }
 
     public ArrayList<De> getListeDes() {
@@ -31,7 +24,9 @@ public class CollectionDes implements ICollection<De> {
     }
 
     class IterateurDe implements Iterateur<De> {
+
         private int index=0;
+
         @Override
         public void reset() {
             this.index=0;
@@ -40,9 +35,12 @@ public class CollectionDes implements ICollection<De> {
 
         @Override
         public De next() {
+            De nextDe = null;
 
             if(this.hasNext()){
-                return listeDes.get(index++);
+                nextDe = listeDes.get(index++);
+                this.index++;
+                return nextDe;
             }
             return null;
         }
