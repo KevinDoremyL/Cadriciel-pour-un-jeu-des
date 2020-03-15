@@ -1,10 +1,14 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class BuncoStrategie implements Strategy {
     private CollectionDes collectionDes = new CollectionDes(3);
     private int nbTour = 1;
     private ArrayList<Integer> scoreDesJoueurs;
-    private Iterateur<Joueur>;
+    CollectionJoueur listeDeJoueurs;
+    Iterateur<Joueur> iterateurJoueur = listeDeJoueurs.getIterateur();
 
     public void setJeuBunco() {
         for(int i=0; i<3; i++){
@@ -33,10 +37,11 @@ public class BuncoStrategie implements Strategy {
              ) {
 
             scoreDesJoueurs.add(j.getScore());
-
         }
 
-            while
+        Collections.sort(scoreDesJoueurs);
+
+
 
     }
 
