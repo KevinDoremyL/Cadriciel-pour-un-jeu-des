@@ -1,38 +1,47 @@
 public class Joueur implements Comparable<Joueur> {
-    String nom;
-    int score;
+
+    private String nomJoueur;
+    private int scoreJoueur;
+    private static int numeroJoueur = 1;
+
+    public Joueur(){
+        this.nomJoueur = "Joueur"+numeroJoueur;
+        numeroJoueur++;
+    }
+
+    public Joueur(String nomJoueur) {
+        this.nomJoueur = nomJoueur;
+        numeroJoueur++;
+    }
+
+    public Joueur(String nomJoueur, int scoreJoueur) {
+        this.nomJoueur = nomJoueur;
+        this.scoreJoueur = scoreJoueur;
+        numeroJoueur++;
+    }
 
     public String getNom() {
-        return nom;
+        return nomJoueur;
     }
 
-    public Joueur(String nom) {
-        this.nom=nom;
-        this.score=0;
+    public void setNomJoueur(String nomJoueur) {
+        this.nomJoueur = nomJoueur;
     }
-    public Joueur(String nom, int score) {
-        this.nom=nom;
-        this.score=0;
+
+    public int getScore() {
+        return scoreJoueur;
+    }
+
+    public void setScore(int scoreJoueur) {
+        this.scoreJoueur = scoreJoueur;
+    }
+    public void ajouterScore(int scoreAjouteur){
+        this.scoreJoueur+= scoreAjouteur;
     }
 
     @Override
     public int compareTo(Joueur o) {
-        // TODO Auto-generated method stub
-        return 0;
+        return Integer.compare(this.getScore(), o.getScore());
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-    public  void additionerScore(int addition){
-        this.score += addition;
-    }
-
-    public int getScore() {
-        return score;
-    }
 }

@@ -98,7 +98,7 @@ public class BuncoStrategie implements Strategy {
                 for (De de : this.collectionDes.getListeDes()
                 ) {
                     if (de.getNuméroDé() == numeroTour) {
-                        iterateurJoueur.currentItem().additionerScore(1);
+                        iterateurJoueur.currentItem().ajouterScore(1);
                         score+=1;
                     }
                 }
