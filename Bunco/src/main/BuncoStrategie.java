@@ -70,7 +70,7 @@ public class BuncoStrategie implements Strategy {
 
         int score=0;
 
-        boolean actif = true; // pour plus tard pas maintenant
+        boolean actif = true;
 
         Iterateur<Joueur> iterateur = jeu.getCollectionJoueur().getIterateur();
 
@@ -119,7 +119,6 @@ public class BuncoStrategie implements Strategy {
                     }
                     System.out.println("Joueur Test" + " ScoreActuel : " + score);
                     actif = true;
-
 
 
                 }
