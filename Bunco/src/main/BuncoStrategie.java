@@ -29,7 +29,6 @@ public class BuncoStrategie implements Strategy {
     public ArrayList<Joueur> calculerLeVainqueur(Jeu jeu){
 
 
-
         ArrayList ListeJoueurQuiJoue = new ArrayList<>();
 
         for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()
