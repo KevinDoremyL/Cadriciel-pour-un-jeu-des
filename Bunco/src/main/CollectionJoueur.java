@@ -18,7 +18,7 @@ public class CollectionJoueur implements ICollection<Joueur> {
     }
 
     @Override
-    public Iterateur getIterateur() {
+    public Iterateur<Joueur> getIterateur() {
         return new IterateurJoueur();
     }
 
@@ -30,14 +30,17 @@ public class CollectionJoueur implements ICollection<Joueur> {
         @Override
         public void reset() {
             this.index=0;
-
         }
 
         @Override
         public Joueur next() {
 
+            Joueur nextJoueur = null;
+
             if(this.hasNext()){
-                return listeJoueurs.get(index++);
+                this.index++;
+                nextJoueur = listeJoueurs.get(index);
+                return nextJoueur;
             }
             return null;
         }
@@ -50,7 +53,7 @@ public class CollectionJoueur implements ICollection<Joueur> {
         @Override
         public boolean hasNext() {
 
-            if(index < listeJoueurs.size()) {
+            if(index < listeJoueurs.size()-1) {
                 return true;
             }
             return false;

@@ -45,4 +45,8 @@ public class Joueur implements Comparable<Joueur> {
         return Integer.compare(o.getScore(), this.getScore());
     }
 
+    @Override
+    public String toString() {
+        return nomJoueur;
+    }
 }

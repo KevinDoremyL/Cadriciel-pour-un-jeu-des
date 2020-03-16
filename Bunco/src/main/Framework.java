@@ -22,13 +22,10 @@ public abstract class Framework {
 
     public void finPartie() {
 
-        calculerLeVainceur();
-        calculerScoreTour();
-
     }
 
-    abstract void calculerLeVainceur();
+    abstract Joueur calculerLeVainceur(Jeu jeu);
 
-    abstract void calculerScoreTour();
+    abstract int calculerScoreTour(Jeu jeu);
 
 }

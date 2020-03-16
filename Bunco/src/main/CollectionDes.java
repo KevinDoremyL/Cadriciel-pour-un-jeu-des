@@ -11,7 +11,7 @@ public class CollectionDes implements ICollection<De> {
     }
 
     @Override
-    public Iterateur getIterateur() {
+    public Iterateur<De> getIterateur() {
         return new IterateurDe();
     }
 
@@ -36,10 +36,9 @@ public class CollectionDes implements ICollection<De> {
         @Override
         public De next() {
             De nextDe = null;
-
             if(this.hasNext()){
-                nextDe = listeDes.get(index++);
                 this.index++;
+                nextDe = listeDes.get(index);
                 return nextDe;
             }
             return null;
@@ -57,7 +56,7 @@ public class CollectionDes implements ICollection<De> {
         @Override
         public boolean hasNext() {
 
-            if(index < listeDes.size()){
+            if(index < listeDes.size()-1){
                 return true;
             }
             return false;

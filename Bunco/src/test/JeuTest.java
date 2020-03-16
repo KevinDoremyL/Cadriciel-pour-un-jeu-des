@@ -4,6 +4,9 @@ import java.lang.reflect.Modifier;
 
 import org.junit.*;
 import org.junit.internal.runners.TestClass;
+import org.junit.Test;
+import java.lang.reflect.Modifier;
+import static org.junit.Assert.*;
 
 public class JeuTest {
     private static Class<Jeu> testClass;
