@@ -2,11 +2,7 @@ import static org.junit.Assert.*;
 
 import java.lang.reflect.Modifier;
 
-import org.junit.*;
-import org.junit.internal.runners.TestClass;
 import org.junit.Test;
-import java.lang.reflect.Modifier;
-import static org.junit.Assert.*;
 
 public class JeuTest {
     private static Class<Jeu> testClass;
@@ -18,12 +14,12 @@ public class JeuTest {
         assertNotNull(ancestor);
 
         boolean subjectIsAncestor = false;
-        if (Framework.class == ancestor) {
+        if (GameTemplate.class == ancestor) {
             subjectIsAncestor = true;
         } else {
             Class<?> secondDegreeAncestor = ancestor.getSuperclass();
             assertNotNull(secondDegreeAncestor);
-            assertEquals(Framework.class, secondDegreeAncestor);
+            assertEquals(GameTemplate.class, secondDegreeAncestor);
         }
 
         if (!subjectIsAncestor) {

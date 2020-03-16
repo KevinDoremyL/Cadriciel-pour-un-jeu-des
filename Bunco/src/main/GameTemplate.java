@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 
-public abstract class Framework {
+public abstract class GameTemplate {
 
     private ArrayList<Joueur> playerList;
     private ArrayList<De> deList;

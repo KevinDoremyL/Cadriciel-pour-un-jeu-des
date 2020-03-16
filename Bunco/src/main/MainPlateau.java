@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class aPlateau {
+public class MainPlateau {
     //
 
     public static void main(String[] args) {
