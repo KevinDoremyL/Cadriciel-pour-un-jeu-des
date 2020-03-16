@@ -59,23 +59,16 @@ public class JeuTest {
         testInstanteBunco.calculerLeVainqueur(testInstance);
         testInstanteBunco2.calculerLeVainqueur(testInstance);
         // Si les deux instances donnent le même resultat (il y une erreur)
-<<<<<<< HEAD
-        if (assertNotEquals(testInstanteBunco, testInstanteBunco2)) {
-        } else {
-            fail("Le resultat reste le même... Erreur  ");
-        }
 
-        testInstanteBunco.calculerLeVainqueur(testInstance);
-=======
 //        if (assertNotEquals(testInstanteBunco, testInstanteBunco2)) {
 //        } else {
-//            fail("Le resultat reste le même... Erreur  ")
+//            fail("Le resultat reste le même... Erreur  ");
 //        }
-
 
         testInstanteBunco.calculerLeVainqueur(testInstance);
 
->>>>>>> e903824e830a4d45ea8fdced2157cbd80373b840
+        testInstanteBunco.calculerLeVainqueur(testInstance);
+
 
     }
     // TODO Test Unitaire 1 : Le classement final des joueurs avec différents
