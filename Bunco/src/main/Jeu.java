@@ -3,9 +3,11 @@ public class Jeu extends Framework {
     private CollectionJoueur collectionJoueur;
     private Strategy strategy;
     
-    public Jeu(Strategy strategie,int nbJoueur) {
-        this.strategy = strategie;
-        this.collectionJoueur = new CollectionJoueur(nbJoueur);
+    public Jeu() {
+    }
+
+    public Strategy getStrategy(){
+        return this.strategy;
     }
 
     public Jeu(Strategy strategie) {
@@ -24,6 +26,10 @@ public class Jeu extends Framework {
 
     public void setStrategy(Strategy param) {
         this.strategy = param;
+    }
+
+    public void setNbJoueur(int nbJoueur) {
+        this.collectionJoueur = new CollectionJoueur(nbJoueur);
     }
 
     public void executeScore(Jeu jeu) {
