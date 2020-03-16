@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import java.lang.reflect.Modifier;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class JeuTest {
@@ -55,17 +56,17 @@ public class JeuTest {
         //Création de deux instantes de Bunco
         BuncoStrategie testInstanteBunco = new BuncoStrategie();
         BuncoStrategie testInstanteBunco2 = new BuncoStrategie();
-testInstanteBunco.calculerLeVainqueur(testInstance);
-testInstanteBunco2.calculerLeVainqueur(testInstance);
+        testInstanteBunco.calculerLeVainqueur(testInstance);
+        testInstanteBunco2.calculerLeVainqueur(testInstance);
         // Si les deux instances donnent le même resultat (il y une erreur)
-if (assertNotEquals(testInstanteBunco, testInstanteBunco2)) {
-} else {
-fail("Le resultat reste le même... Erreur  ")
-}
-        
+//        if (assertNotEquals(testInstanteBunco, testInstanteBunco2)) {
+//        } else {
+//            fail("Le resultat reste le même... Erreur  ")
+//        }
+
 
         testInstanteBunco.calculerLeVainqueur(testInstance);
-        
+
 
     }
 
