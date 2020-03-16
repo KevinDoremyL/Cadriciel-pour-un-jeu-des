@@ -40,10 +40,6 @@ public class BuncoStrategie implements Strategy {
 
         return jeu.getCollectionJoueur().getListeJoueurs();
 
-
-
-
-
     }
 
 
@@ -71,10 +67,8 @@ public class BuncoStrategie implements Strategy {
         for(int numeroTourJeu=1; numeroTourJeu<=6;numeroTourJeu++) {
             do {
                 rollDices();
-                System.out.println("Numéro du tour : " + numeroTourJeu);
-                System.out.println("Dé Un : " + dePremier.getNumeroDe() + " Dé Deux : " + deDeuxieme.getNumeroDe() + " Dé Trois : " + deTroisieme.getNumeroDe());
-
-
+                System.out.println("\n Tour : " + numeroTourJeu);
+                System.out.println("\tDé Un : " + dePremier.getNumeroDe() + " \tDé Deux : " + deDeuxieme.getNumeroDe() + " \tDé Trois : " + deTroisieme.getNumeroDe());
 
                 if (dePremier.getNumeroDe() == deDeuxieme.getNumeroDe() && dePremier.getNumeroDe() == deTroisieme.getNumeroDe()) {
 
@@ -82,7 +76,7 @@ public class BuncoStrategie implements Strategy {
 
                         score += 21;
 
-                        System.out.println("Joueur Test" + " ScoreActuel BUNCO !!! : " + score);
+                        System.out.println("\t\t\tScore actuel du joueur en cours BUNCO: " + score);
 
                         actif = false;
 
@@ -90,9 +84,7 @@ public class BuncoStrategie implements Strategy {
 
                         score += 5;
 
-                        System.out.println("Joueur Test" + " ScoreActuel : " + score);
-
-
+                        System.out.println("\t\t\tScore actuel du joueur en cours : " + score);
 
                         actif = true;
 
@@ -100,18 +92,17 @@ public class BuncoStrategie implements Strategy {
                 } else if (dePremier.getNumeroDe() != numeroTourJeu && deDeuxieme.getNumeroDe() != numeroTourJeu && deTroisieme.getNumeroDe() != numeroTourJeu) {
 
                     score += 0;
-                    System.out.println("Joueur Test" + " ScoreActuel : " + score);
+                    System.out.println("\t\t\tScore actuel du joueur en cours : " + score);
                     actif = false;
 
                 } else {
-                    for (De de : this.collectionDes.getListeDes()
-                    ) {
+                    for (De de : this.collectionDes.getListeDes()) {
                         if (de.getNumeroDe() == numeroTourJeu) {
 
                             score += 1;
                         }
                     }
-                    System.out.println("Joueur Test" + " ScoreActuel : " + score);
+                    System.out.println("\t\t\tScore actuel du joueur en cours : " + score);
                     actif = true;
 
 
