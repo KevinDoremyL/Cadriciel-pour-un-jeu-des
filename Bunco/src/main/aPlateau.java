@@ -20,8 +20,7 @@ public class aPlateau {
 
         jeu.getStrategy().setupGame();
 
-
-        Joueur gagnant = jeu.getStrategy().calculerLeVainqueur(jeu);
+        Joueur gagnant = jeu.calculerLeVainceur(jeu);
 
         ArrayList<Joueur> listeJoueur = jeu.getCollectionJoueur().getListeJoueurs();
 
