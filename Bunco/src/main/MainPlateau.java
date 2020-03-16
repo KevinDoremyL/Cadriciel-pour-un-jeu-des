@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class MainPlateau {
     //
 
@@ -24,15 +22,11 @@ public class MainPlateau {
 
         jeu.getStrategy().setupGame();
 
-        Joueur gagnant = jeu.calculerLeVainceur(jeu);
+        Joueur gagnant = jeu.calculerLeVainqueur(jeu);
 
-        ArrayList<Joueur> listeJoueur = jeu.getCollectionJoueur().getListeJoueurs();
+        jeu.afficherScore(jeu.getCollectionJoueur());
 
-        for (Joueur j:listeJoueur) {
-            System.out.println("Joueur : "+j.getNom() + " Score : " + j.getScore());
-        }
-
-        System.out.println("Gagnant : "+gagnant);
+        jeu.afficherGagnant(gagnant);
 
     }
 }

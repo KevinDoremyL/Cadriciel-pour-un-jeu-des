@@ -1,31 +1,16 @@
-
-import java.util.ArrayList;
-
 public abstract class GameTemplate {
 
-    private ArrayList<Joueur> playerList;
-    private ArrayList<De> deList;
 
-    final void gameStart() {
+    public abstract void setStrategy(Strategy s);
 
-        debutPartie();
-        jouerTour();// test
-        finPartie();// test ryad
-        // test
+    public abstract Joueur calculerLeVainqueur(Jeu jeu);
+
+    public void afficherGagnant(Joueur joueur){
+        System.out.println("\n\tLe gagnant est "+joueur.getNom()+" bravo !!!!");
     }
 
-    public void debutPartie() {
+    public void afficherScore(CollectionJoueur collectionJoueur){
+        UserInterface.montrerGagnant(collectionJoueur.getListeJoueurs());
     }
-
-    public void jouerTour() {
-    }
-
-    public void finPartie() {
-
-    }
-
-    abstract Joueur calculerLeVainceur(Jeu jeu);
-
-    abstract int calculerScoreTour(Jeu jeu);
 
 }

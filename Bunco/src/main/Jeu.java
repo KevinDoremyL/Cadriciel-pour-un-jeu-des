@@ -29,12 +29,8 @@ public class Jeu extends GameTemplate {
     }
 
     @Override
-    public Joueur calculerLeVainceur(Jeu jeu) {
+    public Joueur calculerLeVainqueur(Jeu jeu) {
         return strategy.calculerLeVainqueur(this);
     }
 
-    @Override
-    public int calculerScoreTour(Jeu jeu) {
-        return strategy.calculerScoreTour(this);
-    }
 }
