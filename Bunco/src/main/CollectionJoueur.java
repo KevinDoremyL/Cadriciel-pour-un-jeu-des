@@ -38,8 +38,8 @@ public class CollectionJoueur implements ICollection<Joueur> {
             Joueur nextJoueur = null;
 
             if(this.hasNext()){
-                nextJoueur = listeJoueurs.get(index++);
                 this.index++;
+                nextJoueur = listeJoueurs.get(index);
                 return nextJoueur;
             }
             return null;
@@ -53,7 +53,7 @@ public class CollectionJoueur implements ICollection<Joueur> {
         @Override
         public boolean hasNext() {
 
-            if(index < listeJoueurs.size()) {
+            if(index < listeJoueurs.size()-1) {
                 return true;
             }
             return false;
