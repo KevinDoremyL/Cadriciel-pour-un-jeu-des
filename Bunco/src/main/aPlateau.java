@@ -7,7 +7,8 @@ public class aPlateau {
 
         UserInterface.debutPartie();
 
-        Jeu jeu = new Jeu();
+        Jeu jeu = Factory.getJeu();
+
         int choixStrategie = UserInterface.choixJeu();
         BuncoStrategie buncoStrategie = new BuncoStrategie();
 

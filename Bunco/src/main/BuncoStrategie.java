@@ -27,6 +27,7 @@ public class BuncoStrategie implements Strategy {
     public Joueur calculerLeVainqueur(Jeu jeu){
 
         for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()) {
+            System.out.println("\n\n-------- "+j.getNom()+" prend les dés ---------");
             j.setScore(calculerScoreTour(jeu));
         }
 
@@ -100,8 +101,7 @@ public class BuncoStrategie implements Strategy {
 
 
                 }
-            }
-            while (actif );
+            } while (actif );
 
         }
         return score;
