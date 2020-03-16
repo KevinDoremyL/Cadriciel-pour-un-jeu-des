@@ -5,18 +5,18 @@ public class aPlateau {
 
     public static void main(String[] args) {
 
-        Jeu jeu = new Jeu();
-
         UserInterface.debutPartie();
+        Jeu jeu = new Jeu();
         int choixStrategie = UserInterface.choixJeu();
         BuncoStrategie buncoStrategie = new BuncoStrategie();
 
-//        if(choixStrategie == 1){
-//            jeu.setStrategy(buncoStrategie);
-//        }
+        if(choixStrategie == 1){
+            jeu.setStrategy(buncoStrategie);
+        }
 
-        jeu.setStrategy(buncoStrategie); // temporaire, vrai version en haut
+//        jeu.setStrategy(buncoStrategie); // temporaire, vrai version en haut
         jeu.getStrategy().setupGame();
+
 
         Joueur gagnant = jeu.getStrategy().calculerLeVainqueur(jeu);
 

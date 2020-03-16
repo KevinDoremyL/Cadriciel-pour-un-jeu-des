@@ -12,7 +12,7 @@ public class Factory {
         return new Joueur(nom);
     }
 
-    public static Jeu getJeu(Strategy strategy, int nbJoueur){
-        return new Jeu(strategy, nbJoueur);
+    public static Jeu getJeu(){
+        return new Jeu();
     }
 }

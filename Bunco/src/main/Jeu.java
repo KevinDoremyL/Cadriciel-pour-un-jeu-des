@@ -4,6 +4,16 @@ public class Jeu extends Framework {
     private Strategy strategy;
     
     public Jeu() {
+//        this.collectionJoueur = new CollectionJoueur(3);
+//        Joueur Kevin = new Joueur("Kevin");
+//        Joueur nassim = new Joueur("Nassim");
+//        Joueur ryad = new Joueur("Ryad");
+//        Joueur camile = new Joueur("Camile");
+//        this.collectionJoueur.ajouterJoueur(Kevin);
+//        this.collectionJoueur.ajouterJoueur(nassim);
+//        this.collectionJoueur.ajouterJoueur(ryad);
+//        this.collectionJoueur.ajouterJoueur(camile);
+        this.collectionJoueur = UserInterface.peuplerJoueurs();
     }
 
     public Strategy getStrategy(){

@@ -28,9 +28,10 @@ public class UserInterface {
         CollectionJoueur joueurs = new CollectionJoueur(nombreDeJoueur);
         int joueurCreer = 0;
         String nom = "";
-        while(joueurCreer <= nombreDeJoueur){
+        while(joueurCreer < nombreDeJoueur){
             nom = promptUserForName();
-            joueurs.ajouterJoueur(new Joueur(nom));
+            joueurs.ajouterJoueur(Factory.getJoueur(nom));
+            joueurCreer++;
         }
 
         return joueurs;
