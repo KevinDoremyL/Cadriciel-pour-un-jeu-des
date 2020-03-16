@@ -11,11 +11,15 @@ public class aPlateau {
         Jeu jeuTest = new Jeu(strategie);
         strategie.setJeuBunco();
         // System.out.println("Joueur Test " + strategie.calculerScoreTour(jeuTest));
-        ArrayList<Joueur> listeJoueur  = strategie.calculerLeVainqueur(jeuTest);
-        for (Joueur j:listeJoueur
-        ) {
+        Joueur gagnant = strategie.calculerLeVainqueur(jeuTest);
+
+        ArrayList<Joueur> listeJoueur = jeuTest.getCollectionJoueur().getListeJoueurs();
+
+        for (Joueur j:listeJoueur) {
             System.out.println("Joueur : "+j.getNom() + " Score : " + j.getScore());
         }
+
+        System.out.println("Gagnant : "+gagnant);
 
     }
 }

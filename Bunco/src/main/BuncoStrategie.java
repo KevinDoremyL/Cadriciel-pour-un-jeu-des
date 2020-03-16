@@ -8,7 +8,7 @@ public class BuncoStrategie implements Strategy {
 
     public void setJeuBunco() {
         for(int i=0; i<3; i++){
-            collectionDes.ajouterDe(new De(6));
+            collectionDes.ajouterDe(Factory.getDice(6));
         }
 
     }
@@ -29,7 +29,7 @@ public class BuncoStrategie implements Strategy {
     }
 
     @Override
-    public ArrayList<Joueur> calculerLeVainqueur(Jeu jeu){
+    public Joueur calculerLeVainqueur(Jeu jeu){
 
         for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()) {
 
@@ -38,7 +38,7 @@ public class BuncoStrategie implements Strategy {
 
         Collections.sort(jeu.getCollectionJoueur().getListeJoueurs());
 
-        return jeu.getCollectionJoueur().getListeJoueurs();
+        return jeu.getCollectionJoueur().getListeJoueurs().get(0);
 
     }
 
