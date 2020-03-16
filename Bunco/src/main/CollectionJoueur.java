@@ -18,7 +18,7 @@ public class CollectionJoueur implements ICollection<Joueur> {
     }
 
     @Override
-    public Iterateur getIterateur() {
+    public Iterateur<Joueur> getIterateur() {
         return new IterateurJoueur();
     }
 
