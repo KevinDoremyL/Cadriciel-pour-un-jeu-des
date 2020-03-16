@@ -52,28 +52,20 @@ public class JeuTest {
 
     @Test
     public void classement_final_des_joueurs_Class() {
-        //Création de deux instantes de Bunco
+        // Création de deux instantes de Bunco
         BuncoStrategie testInstanteBunco = new BuncoStrategie();
         BuncoStrategie testInstanteBunco2 = new BuncoStrategie();
-testInstanteBunco.calculerLeVainqueur(testInstance);
-testInstanteBunco2.calculerLeVainqueur(testInstance);
+        testInstanteBunco.calculerLeVainqueur(testInstance);
+        testInstanteBunco2.calculerLeVainqueur(testInstance);
         // Si les deux instances donnent le même resultat (il y une erreur)
-if (assertNotEquals(testInstanteBunco, testInstanteBunco2)) {
-} else {
-fail("Le resultat reste le même... Erreur  ")
-}
-        
+        if (assertNotEquals(testInstanteBunco, testInstanteBunco2)) {
+        } else {
+            fail("Le resultat reste le même... Erreur  ");
+        }
 
         testInstanteBunco.calculerLeVainqueur(testInstance);
-        
 
     }
-
-    @Test
-    public void obtenir_3_des_identiques_tour_differents() {
-
-    }
-
     // TODO Test Unitaire 1 : Le classement final des joueurs avec différents
     // scores.
     // TODO Test Unitaire 4 : Dans le cas d'obtention de 3 chiffres identiques mais

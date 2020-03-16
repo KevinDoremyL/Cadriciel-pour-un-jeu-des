@@ -21,7 +21,7 @@ public class DeTest {
 		assertTrue(de1.compareTo(de2) == 1);
 	}
 
-	@Test //test
+	@Test // test
 	public void deInferieurTest() {
 		de1.setFaceObtenue(4);
 		de2.setFaceObtenue(5);
@@ -36,7 +36,7 @@ public class DeTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void deNullTest() {
-		de1.setFaceObtenue(4);
+		de1.setFaceObtenue(7);
 		de1.compareTo(null);
 	}
 }
