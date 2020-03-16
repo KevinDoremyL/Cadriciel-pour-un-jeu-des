@@ -26,6 +26,7 @@ public class BuncoStrategie implements Strategy {
     @Override
     public Joueur calculerLeVainqueur(Jeu jeu){
 
+
         for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()) {
             System.out.println("\n\n-------- "+j.getNom()+" prend les dés ---------");
             j.setScore(calculerScoreTour(jeu));
@@ -55,8 +56,6 @@ public class BuncoStrategie implements Strategy {
         int score=0;
 
         boolean actif = true;
-
-        Iterateur<Joueur> iterateur = jeu.getCollectionJoueur().getIterateur();
 
         for(int numeroTourJeu=1; numeroTourJeu<=6;numeroTourJeu++) {
             do {
