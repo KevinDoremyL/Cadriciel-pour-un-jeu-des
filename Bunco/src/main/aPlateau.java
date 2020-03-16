@@ -6,13 +6,20 @@ public class aPlateau {
     public static void main(String[] args) {
         // TODO Vue de l'app ( M V C )
 
-        BuncoStrategie strategie = new BuncoStrategie();
+        UserInterface.debutPartie();
+        int choixStrategie = UserInterface.choixJeu();
 
-        Jeu jeuTest = new Jeu(strategie);
-        strategie.setupGame();
-        Joueur gagnant = strategie.calculerLeVainqueur(jeuTest);
+        BuncoStrategie buncoStrategie = new BuncoStrategie();
 
-        ArrayList<Joueur> listeJoueur = jeuTest.getCollectionJoueur().getListeJoueurs();
+        if(choixStrategie == 1){
+            Jeu jeuBunco = new Jeu(buncoStrategie);
+        }
+
+
+        buncoStrategie.setupGame();
+        Joueur gagnant = buncoStrategie.calculerLeVainqueur(jeuBunco);
+
+        ArrayList<Joueur> listeJoueur = jeuBunco.getCollectionJoueur().getListeJoueurs();
 
         for (Joueur j:listeJoueur) {
             System.out.println("Joueur : "+j.getNom() + " Score : " + j.getScore());

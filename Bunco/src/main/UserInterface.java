@@ -9,10 +9,7 @@ public class UserInterface {
     }
 
     public static void debutPartie(){
-
         System.out.println("----- Initialisation partie -----");
-        int choixJeu = choixJeu();
-
     }
 
     public static int choixJeu(){
