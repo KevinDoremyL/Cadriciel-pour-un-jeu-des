@@ -9,8 +9,7 @@ public class aPlateau {
         BuncoStrategie strategie = new BuncoStrategie();
 
         Jeu jeuTest = new Jeu(strategie);
-        strategie.setJeuBunco();
-        // System.out.println("Joueur Test " + strategie.calculerScoreTour(jeuTest));
+        strategie.setupGame();
         Joueur gagnant = strategie.calculerLeVainqueur(jeuTest);
 
         ArrayList<Joueur> listeJoueur = jeuTest.getCollectionJoueur().getListeJoueurs();

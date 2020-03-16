@@ -3,16 +3,9 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class BuncoStrategie implements Strategy {
+
     private CollectionDes collectionDes = new CollectionDes(3);
     private int nbTour = 1;
-
-    public void setJeuBunco() {
-        for(int i=0; i<3; i++){
-            collectionDes.ajouterDe(Factory.getDice(6));
-        }
-
-    }
-
 
     public void rollDices(){
         Iterateur<De> iterateur =  collectionDes.getIterateur();
@@ -25,14 +18,15 @@ public class BuncoStrategie implements Strategy {
 
     @Override
     public void setupGame() {
-
+        for(int i=0; i<3; i++){
+            collectionDes.ajouterDe(Factory.getDice(6));
+        }
     }
 
     @Override
     public Joueur calculerLeVainqueur(Jeu jeu){
 
         for (Joueur j: jeu.getCollectionJoueur().getListeJoueurs()) {
-
             j.setScore(calculerScoreTour(jeu));
         }
 
@@ -41,7 +35,6 @@ public class BuncoStrategie implements Strategy {
         return jeu.getCollectionJoueur().getListeJoueurs().get(0);
 
     }
-
 
 
     @Override
