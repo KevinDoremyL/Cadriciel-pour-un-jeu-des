@@ -30,7 +30,7 @@ public class BuncoTest {
         }
     }
 
-    @test
+    //@test
     public void setupGame_test() {
         CollectionDes collectionDes;
         BuncoStrategie buncoStrategie = new BuncoStrategie();
