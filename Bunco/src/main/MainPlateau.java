@@ -1,5 +1,4 @@
 public class MainPlateau {
-    //
 
     public static void main(String[] args) {
 
