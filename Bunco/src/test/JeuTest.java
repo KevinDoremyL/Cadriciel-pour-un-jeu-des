@@ -1,3 +1,10 @@
+import static org.junit.Assert.*;
+
+import java.lang.reflect.Modifier;
+
+import org.junit.*;
+import org.junit.internal.runners.TestClass;
+
 public class JeuTest {
     private static Class<Jeu> testClass;
 
@@ -19,6 +26,15 @@ public class JeuTest {
         if (!subjectIsAncestor) {
             fail("Framework should be a superclass");
         }
+    }
+
+    @Test
+    public void classement_final__des_joueurs_Class() {
+
+    }
+
+    @Test
+    public void obtenir_3_dés_identiques_tour_differents() {
 
     }
 
