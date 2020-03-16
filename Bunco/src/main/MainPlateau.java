@@ -9,14 +9,17 @@ public class MainPlateau {
 
         Jeu jeu = Factory.getJeu();
 
-        int choixStrategie = UserInterface.choixJeu();
-        BuncoStrategie buncoStrategie = new BuncoStrategie();
+        int choixStrategie = -1;
 
-        if(choixStrategie == 1){
-            jeu.setStrategy(buncoStrategie);
-        } else {
-            System.out.println("Désolé, il y a seulement Bunco pour l'instant. Ce jeu vous sera imposé.");
-            jeu.setStrategy(buncoStrategie);
+        while(choixStrategie == -1) {
+            choixStrategie = UserInterface.choixJeu();
+            if (choixStrategie == 1) {
+                BuncoStrategie buncoStrategie = new BuncoStrategie();
+                jeu.setStrategy(buncoStrategie);
+            } else {
+                System.out.println("Désolé, il y a seulement Bunco pour l'instant. Ce jeu vous sera imposé.");
+                choixStrategie = -1;
+            }
         }
 
         jeu.getStrategy().setupGame();

@@ -47,6 +47,7 @@ public class UserInterface {
                 value = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Entrée invalide");
+                value = 0;
             }
         }
         return value;
