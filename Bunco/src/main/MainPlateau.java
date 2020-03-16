@@ -1,5 +1,5 @@
 public class MainPlateau {
-
+//
     public static void main(String[] args) {
 
         UserInterface.debutPartie();
